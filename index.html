@@ -94,64 +94,53 @@
   <!-- HEADER BAR                                                -->
   <!-- ========================================================= -->
   <header class="no-print bg-slate-900/40 backdrop-blur-md border-b border-white/10 sticky top-0 z-30 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
       
       <!-- Back to Main Portal & Title with Custom Logo & Border -->
       <div class="flex items-center space-x-3">
-        <a href="https://fizihadi.github.io/TryPortalPelajar/" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-700/80">
+        <a href="landing.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-700/80">
           <i class="fa-solid fa-arrow-left"></i>
-          <span class="hidden sm:inline">Portal Pelajar</span>
+          <span class="hidden md:inline">Portal Pelajar</span>
         </a>
         <div class="h-5 w-px bg-slate-700/80 hidden sm:block"></div>
         <div class="flex items-center gap-2.5">
-          <!-- Logo PNG with Gold Border Box Container -->
-          <div class="w-9 h-9 rounded-xl bg-white border border-ipgGold-500/60 flex items-center justify-center overflow-hidden shadow-md">
+          <div class="w-9 h-9 rounded-xl bg-white border border-ipgGold-500/60 flex items-center justify-center overflow-hidden shadow-md shrink-0">
             <img src="logo3.png" alt="Logo" class="w-full h-full object-contain">
           </div>
-          <h1 class="text-sm sm:text-base font-extrabold text-white tracking-wide uppercase">
+          <h1 class="text-xs sm:text-base font-extrabold text-white tracking-wide uppercase truncate">
             Sistem Praktikum<span class="text-ipgGold-400"> IPGKBA</span>
           </h1>
         </div>
+      </div>
+
+      <!-- Navigation Switcher: Daftar vs Semak/Batal -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <button id="navBtn-register" onclick="switchPortalView('register')" class="px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-xs font-bold shadow transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-file-signature"></i>
+          <span>Daftar</span>
+        </button>
+        <button id="navBtn-semak" onclick="switchPortalView('semak')" class="px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Semak / Batal</span>
+        </button>
       </div>
 
     </div>
   </header>
 
   <!-- ========================================================= -->
-  <!-- MAIN STEPPER APPLICATION HUB                              -->
+  <!-- MAIN APPLICATION CONTAINER                                -->
   <!-- ========================================================= -->
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex flex-col justify-start">
-    
-    <!-- STEP PROGRESS INDICATOR BAR -->
-    <div class="no-print mb-8">
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl">
-        <div class="grid grid-cols-4 gap-2 text-center text-xs font-semibold">
-          
-          <!-- Step 1 -->
-          <div id="stepTab-1" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white transition-all">
-            <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">1</span>
-            <span>Pilih Negeri</span>
-          </div>
 
-          <!-- Step 2 -->
-          <div id="stepTab-2" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
-            <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">2</span>
-            <span>Maklumat Kumpulan</span>
-          </div>
-
-          <!-- Step 3 -->
-          <div id="stepTab-3" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
-            <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">3</span>
-            <span>Pilih Sekolah</span>
-          </div>
-
-          <!-- Step 4 -->
-          <div id="stepTab-4" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
-            <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">4</span>
-            <span>Slip Penempatan</span>
-          </div>
-
-        </div>
+    <!-- SYSTEM OFFLINE ALERT BANNER -->
+    <div id="systemOfflineBanner" class="hidden no-print mb-6 p-4 sm:p-5 rounded-2xl bg-rose-950/95 border-2 border-rose-600/80 text-rose-100 shadow-2xl flex items-start sm:items-center gap-4">
+      <div class="w-11 h-11 rounded-xl bg-rose-600/30 border border-rose-500/50 text-rose-300 flex items-center justify-center text-xl shrink-0">
+        <i class="fa-solid fa-power-off"></i>
+      </div>
+      <div>
+        <h3 class="text-sm sm:text-base font-black text-white uppercase tracking-wide">Sistem Tidak Dalam Talian (Offline)</h3>
+        <p class="text-xs sm:text-sm text-rose-200 mt-0.5">Pendaftaran penempatan praktikum telah ditutup sementara oleh pentadbir. Tiada penghantaran baharu akan diterima buat masa ini.</p>
       </div>
     </div>
 
@@ -164,354 +153,455 @@
       <button onclick="hideToast()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
-
     <!-- ========================================================= -->
-    <!-- STEP 1: NEGERI SELECTION                                  -->
+    <!-- VIEW A: 4-STEP REGISTRATION WORKFLOW                      -->
     <!-- ========================================================= -->
-    <section id="stepSection-1" class="space-y-6">
-      <div class="text-center max-w-2xl mx-auto space-y-2">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Langkah 1: Pilih Negeri Penempatan</h2>
-        <p class="text-xs sm:text-sm text-slate-400">Sila pilih kawasan negeri pratikum anda. Bilangan ahli kumpulan bergantung pada pilihan negeri bagi kemudahan berkongsi kenderaan.</p>
-      </div>
+    <div id="registerViewContainer">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-4">
-        
-        <!-- WILAYAH PERSEKUTUAN KL -->
-        <div onclick="selectNegeri('KL')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgBlue-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgBlue-500/10 rounded-full group-hover:bg-ipgBlue-500/20 transition-all"></div>
-          
-          <div class="space-y-4 relative z-10">
-            <div class="w-14 h-14 rounded-2xl bg-ipgBlue-500/20 border border-ipgBlue-500/40 text-ipgBlue-400 flex items-center justify-center text-2xl font-bold">
-              <i class="fa-solid fa-city"></i>
-            </div>
+      <!-- STEP PROGRESS INDICATOR BAR -->
+      <div class="no-print mb-8">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl">
+          <div class="grid grid-cols-4 gap-2 text-center text-xs font-semibold">
             
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-ipgBlue-400 bg-ipgBlue-500/10 px-2.5 py-1 rounded-full border border-ipgBlue-500/20">Syarat 2 Orang</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Kuala Lumpur (KL)</h3>
-              <p class="text-xs text-slate-400 mt-1 leading-relaxed">Penempatan sekolah di zon Wilayah Persekutuan Kuala Lumpur. Ahli wajib 2 orang.</p>
+            <!-- Step 1 -->
+            <div id="stepTab-1" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white transition-all">
+              <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">1</span>
+              <span>Pilih Negeri</span>
             </div>
 
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
-              <div class="flex items-center gap-2 text-emerald-400 font-semibold">
-                <i class="fa-solid fa-users text-xs"></i> 2 Guru Pelatih per kumpulan.
-              </div>
-              <p class="text-[11px] text-slate-400">Disyorkan bagi yang menetap berhampiran Kuala Lumpur.</p>
+            <!-- Step 2 -->
+            <div id="stepTab-2" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
+              <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">2</span>
+              <span>Maklumat Kumpulan</span>
             </div>
-          </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-ipgBlue-400">
-            <span>Pilih Kuala Lumpur</span>
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            <!-- Step 3 -->
+            <div id="stepTab-3" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
+              <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">3</span>
+              <span>Pilih Sekolah</span>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="stepTab-4" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
+              <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">4</span>
+              <span>Slip Penempatan</span>
+            </div>
+
           </div>
         </div>
+      </div>
 
-        <!-- SELANGOR -->
-        <div onclick="selectNegeri('Selangor')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgGold-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgGold-500/10 rounded-full group-hover:bg-ipgGold-500/20 transition-all"></div>
+      <!-- ========================================================= -->
+      <!-- STEP 1: NEGERI SELECTION                                  -->
+      <!-- ========================================================= -->
+      <section id="stepSection-1" class="space-y-6">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Langkah 1: Pilih Negeri</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Sila pilih kawasan negeri praktikum anda. Bilangan ahli kumpulan bergantung pada pilihan negeri bagi kemudahan berkongsi kenderaan.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-4">
           
-          <div class="space-y-4 relative z-10">
-            <div class="w-14 h-14 rounded-2xl bg-ipgGold-500/20 border border-ipgGold-500/40 text-ipgGold-400 flex items-center justify-center text-2xl font-bold">
-              <i class="fa-solid fa-map-location-dot"></i>
-            </div>
+          <!-- WILAYAH PERSEKUTUAN KL -->
+          <div id="cardNegeriKL" onclick="selectNegeri('KL')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgBlue-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgBlue-500/10 rounded-full group-hover:bg-ipgBlue-500/20 transition-all"></div>
             
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-white bg-ipgGold-500/10 px-2.5 py-1 rounded-full border border-ipgGold-500/20">Syarat 3-4 Orang</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Selangor Darul Ehsan</h3>
-              <p class="text-xs text-slate-400 mt-1 leading-relaxed">Penempatan sekolah daerah di Selangor. Ahli antara 3 hingga 4 orang.</p>
-            </div>
-
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
-              <div class="flex items-center gap-2 text-emerald-400 font-semibold">
-                <i class="fa-solid fa-users text-xs"></i> 3 - 4 Guru Pelatih per kumpulan.
+            <div class="space-y-4 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-ipgBlue-500/20 border border-ipgBlue-500/40 text-ipgBlue-400 flex items-center justify-center text-2xl font-bold">
+                <i class="fa-solid fa-city"></i>
               </div>
-              <p class="text-[11px] text-slate-400">Digalakkan untuk berkongsi kenderaan.</p>
+              
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-ipgBlue-400 bg-ipgBlue-500/10 px-2.5 py-1 rounded-full border border-ipgBlue-500/20">Syarat 2 Orang</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Kuala Lumpur (KL)</h3>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">Penempatan sekolah di zon Wilayah Persekutuan Kuala Lumpur. Ahli wajib 2 orang.</p>
+              </div>
+
+              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="flex items-center gap-2 text-emerald-400 font-semibold">
+                  <i class="fa-solid fa-users text-xs"></i> 2 Guru Pelatih per kumpulan.
+                </div>
+                <p class="text-[11px] text-slate-400">Disyorkan bagi yang menetap berhampiran Kuala Lumpur.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-ipgBlue-400">
+              <span>Pilih Kuala Lumpur</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
             </div>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-white">
-            <span>Pilih Selangor</span>
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-          </div>
-        </div>
+          <!-- SELANGOR -->
+          <div id="cardNegeriSelangor" onclick="selectNegeri('Selangor')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgGold-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgGold-500/10 rounded-full group-hover:bg-ipgGold-500/20 transition-all"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-ipgGold-500/20 border border-ipgGold-500/40 text-ipgGold-400 flex items-center justify-center text-2xl font-bold">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-white bg-ipgGold-500/10 px-2.5 py-1 rounded-full border border-ipgGold-500/20">Syarat 3-4 Orang</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Selangor Darul Ehsan</h3>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">Sekolah di sekitar kawasan Selangor. Ahli antara 3 hingga 4 orang.</p>
+              </div>
 
-      </div>
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- STEP 2: GROUP DETAILS FORM                                -->
-    <!-- ========================================================= -->
-    <section id="stepSection-2" class="hidden space-y-6">
-      <div class="flex items-center justify-between max-w-4xl mx-auto border-b border-slate-800 pb-4">
-        <div>
-          <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 2: Maklumat Ketua & Ahli Kumpulan</h2>
-          <p class="text-xs text-slate-400">Pendaftaran borang hanya perlu diisi oleh <strong class="text-slate-200">Ketua Kumpulan sahaja</strong>.</p>
-        </div>
-        <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700">
-          <i class="fa-solid fa-rotate-left"></i> Tukar Negeri
-        </button>
-      </div>
-
-      <form id="groupForm" class="max-w-4xl mx-auto space-y-6">
-        
-        <!-- SECTION: KETUA KUMPULAN -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <h3 class="text-base font-bold text-ipgBlue-400 flex items-center gap-2">
-              <i class="fa-solid fa-user-gear"></i> Maklumat Ketua Kumpulan
-            </h3>
-            <span class="text-[11px] bg-ipgBlue-500/20 text-ipgBlue-400 px-2.5 py-0.5 rounded-full border border-ipgBlue-500/30 font-bold">Ketua</span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Penuh Ketua <span class="text-rose-500">*</span></label>
-              <input type="text" id="leaderName" required placeholder="Cth: NURHAFIZI BIN NORHADI" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="flex items-center gap-2 text-emerald-400 font-semibold">
+                  <i class="fa-solid fa-users text-xs"></i> 3 - 4 Guru Pelatih per kumpulan.
+                </div>
+                <p class="text-[11px] text-slate-400">Digalakkan untuk berkongsi kenderaan.</p>
+              </div>
             </div>
 
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">No. Kad Pengenalan <span class="text-rose-500">*</span></label>
-              <input type="text" id="leaderIc" required placeholder="Cth: 02051210XXXX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
-            </div>
-
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Opsyen <span class="text-rose-500">*</span></label>
-              <select id="leaderSubject" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
-                <option value="">-- Pilih Opsyen --</option>
-                <option value="Bahasa Melayu">Bahasa Melayu (BM)</option>
-                <option value="Bahasa Inggeris (TESL)">Bahasa Inggeris (TESL)</option>
-                <option value="Pendidikan Islam">Pendidikan Islam (PI)</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Kelas / Unit Semasa <span class="text-rose-500">*</span></label>
-              <input type="text" id="leaderClass" required placeholder="Cth: TESL B 2023" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
-            </div>
-
-            <div class="md:col-span-2">
-              <label class="block text-xs font-semibold text-slate-300 mb-1">No. Telefon <span class="text-rose-500">*</span></label>
-              <input type="tel" id="leaderPhone" required placeholder="Cth: 0198765432" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
-            </div>
-
-            <!-- RESIDENTIAL AREA FOR DISTANCE CALCULATION -->
-            <div class="md:col-span-2 bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
-              <label class="block text-xs font-bold text-ipgGold-400">
-                <i class="fa-solid fa-location-dot mr-1"></i> Lokasi Kediaman <span class="text-rose-500">*</span>
-              </label>
-              <p class="text-[11px] text-slate-400">Lokasi ini digunakan oleh sistem untuk menganggarkan jarak antara rumah dan sekolah.</p>
-              <select id="leaderArea" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgGold-500 transition-all">
-                <option value="">-- Pilih Kawasan Kediaman--</option>
-                <optgroup label="Kuala Lumpur">
-                  <option value="Bangsar">Bangsar / Pantai Dalam</option>
-                  <option value="Setapak">Setapak / Wangsa Maju</option>
-                  <option value="Cheras">Cheras / Bandar Tun Razak</option>
-                  <option value="Sentul">Sentul / Segambut</option>
-                  <option value="Kepong">Kepong / Jinjang</option>
-                  <option value="Bukit Jalil">Bukit Jalil / Seri Kembangan</option>
-                </optgroup>
-                <optgroup label="Selangor">
-                  <option value="Shah Alam">Shah Alam (Seksyen 1 - 25)</option>
-                  <option value="Petaling Jaya">Petaling Jaya / Subang Jaya</option>
-                  <option value="Kajang">Kajang / Bandar Baru Bangi</option>
-                  <option value="Gombak">Gombak / Batu Caves / Selayang</option>
-                  <option value="Klang">Klang / Kapar</option>
-                  <option value="Puchong">Puchong / Cyberjaya</option>
-                </optgroup>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- DYNAMIC AHLI KUMPULAN SECTION -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-users"></i> Maklumat Ahli Kumpulan
-              </h3>
-              <p id="memberRequirementNote" class="text-xs text-slate-400 mt-0.5"></p>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-white">
+              <span>Pilih Selangor</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
             </div>
           </div>
 
-          <!-- Ahli Form Container -->
-          <div id="membersContainer" class="space-y-4">
-            <!-- Dynamic Member Inputs Rendered via JS -->
-          </div>
         </div>
-
-        <!-- SUBMIT & PROCEED BUTTON -->
-        <div class="flex justify-end pt-2">
-          <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-ipgBlue-600 to-ipgBlue-500 hover:from-ipgBlue-500 hover:to-ipgBlue-600 text-white font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2">
-            <span>Seterusnya: Cari & Pilih Sekolah</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </form>
-    </section>
+      </section>
 
 
-    <!-- ========================================================= -->
-    <!-- STEP 3: SCHOOL SELECTION & REAL-TIME DISTANCE              -->
-    <!-- ========================================================= -->
-    <section id="stepSection-3" class="hidden space-y-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
-        <div>
-          <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 3: Pemilihan Sekolah Praktikum</h2>
-          <p class="text-xs text-slate-400">Jarak dianggarkan secara automatik. <span id="activeLeaderAreaBadge" class="text-ipgGold-400 font-bold"></span></p>
-        </div>
-        <div class="flex items-center gap-2">
-          <button onclick="goToStep(2)" class="text-xs text-slate-400 hover:text-white px-3 py-2 rounded-xl bg-slate-800 border border-slate-700">
-            <i class="fa-solid fa-pen mr-1"></i> Edit Maklumat Kumpulan
-          </button>
-        </div>
-      </div>
-
-      <!-- SEARCH & FILTER TOOLBAR -->
-      <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-xl flex flex-col md:flex-row gap-3 items-center justify-between">
-        
-        <!-- Search Input -->
-        <div class="relative w-full md:w-80">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
-          <input type="text" id="schoolSearchInput" oninput="filterSchools()" placeholder="Cari nama sekolah / kod..." class="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-ipgBlue-500">
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
-          <select id="districtFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
-            <option value="ALL">Semua Daerah / PPD</option>
-          </select>
-
-          <select id="availabilityFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
-            <option value="ALL">Semua Status Kuota</option>
-            <option value="AVAILABLE">Ada Kekosongan</option>
-            <option value="FULL">Penuh / Lock</option>
-          </select>
-
-          <select id="sortFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
-            <option value="DISTANCE">Susun: Terdekat Dahulu</option>
-            <option value="NAME">Susun: Abjad Nama</option>
-            <option value="SLOTS">Susun: Kuota Terbanyak</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- SCHOOL LIST GRID -->
-      <div id="schoolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- School Cards Injected Via JS -->
-      </div>
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- STEP 4: PLACEMENT VOUCHER SLIP (PRINTABLE)                -->
-    <!-- ========================================================= -->
-    <section id="stepSection-4" class="hidden space-y-6">
-      
-      <div class="no-print text-center max-w-2xl mx-auto space-y-2">
-        <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 mx-auto flex items-center justify-center text-2xl">
-          <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-black text-white">Penempatan Berjaya Disahkan!</h2>
-        <p class="text-xs sm:text-sm text-slate-400">Tahniah. Maklumat kumpulan anda telah didaftarkan secara rasmi. Sila cetak slip ini sebagai bukti.</p>
-        
-        <div class="pt-3 flex items-center justify-center gap-3">
-          <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-ipgGold-500 hover:bg-ipgGold-600 text-slate-950 font-extrabold text-xs shadow-lg transition-all flex items-center gap-2">
-            <i class="fa-solid fa-print"></i> Cetak / Simpan PDF
-          </button>
-          <button onclick="resetRegistration()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs border border-slate-700">
-            Daftar Kumpulan Baru
-          </button>
-        </div>
-      </div>
-
-      <!-- OFFICIAL SLIP PRINTABLE CONTAINER -->
-      <div id="printableVoucher" class="max-w-3xl mx-auto bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200 space-y-6">
-        
-        <!-- Header Section -->
-        <div class="border-b-2 border-slate-900 pb-4 flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <div class="w-11 h-11 rounded-xl bg-white border border-ipgGold-500/60 flex items-center justify-center overflow-hidden shadow-sm">
-              <img src="logo3.png" alt="Logo IPGKBA" class="w-full h-full object-contain">
-            </div>
-            <div>
-              <h3 class="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight uppercase">Institut Pendidikan Guru Malaysia</h3>
-              <p class="text-xs text-slate-600 font-semibold">Jabatan Unit Praktikum IPGKBA</p>
-            </div>
-          </div>
-          <div class="text-right">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-full border border-emerald-300">DISAHKAN</span>
-            <p id="voucherRefCode" class="text-xs font-mono font-bold text-slate-800 mt-1"></p>
-          </div>
-        </div>
-
-        <!-- Slip Title -->
-        <div class="text-center py-2.5 bg-slate-100 rounded-xl border border-slate-200">
-          <h4 class="font-black text-slate-900 uppercase tracking-wide text-sm sm:text-base">SLIP PENGESAHAN PENEMPATAN PRAKTIKUM</h4>
-          <p class="text-[11px] text-slate-600 font-medium">Sistem Agihan Sekolah Automatik IPGKBA</p>
-        </div>
-
-        <!-- School Placement Info -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs">
+      <!-- ========================================================= -->
+      <!-- STEP 2: GROUP DETAILS FORM                                -->
+      <!-- ========================================================= -->
+      <section id="stepSection-2" class="hidden space-y-6">
+        <div class="flex items-center justify-between max-w-4xl mx-auto border-b border-slate-800 pb-4">
           <div>
-            <span class="text-slate-500 font-semibold block text-[11px]">Sekolah Praktikum:</span>
-            <span id="voucherSchoolName" class="font-black text-sm text-slate-900 block mt-0.5"></span>
-            <span id="voucherSchoolAddress" class="text-slate-600 block mt-1"></span>
+            <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 2: Maklumat Ketua & Ahli Kumpulan</h2>
+            <p class="text-xs text-slate-400">Pendaftaran borang hanya perlu diisi oleh <strong class="text-slate-200">Ketua Kumpulan sahaja</strong>.</p>
           </div>
-          <div class="space-y-1 md:border-l md:border-slate-200 md:pl-4">
-            <div>
-              <span class="text-slate-500 font-semibold">Daerah / PPD:</span>
-              <span id="voucherSchoolDistrict" class="font-bold text-slate-900 ml-1"></span>
+          <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700">
+            <i class="fa-solid fa-rotate-left"></i> Tukar Negeri
+          </button>
+        </div>
+
+        <form id="groupForm" class="max-w-4xl mx-auto space-y-6">
+          
+          <!-- SECTION: KETUA KUMPULAN -->
+          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <h3 class="text-base font-bold text-ipgBlue-400 flex items-center gap-2">
+                <i class="fa-solid fa-user-gear"></i> Maklumat Ketua Kumpulan
+              </h3>
+              <span class="text-[11px] bg-ipgBlue-500/20 text-ipgBlue-400 px-2.5 py-0.5 rounded-full border border-ipgBlue-500/30 font-bold">Ketua</span>
             </div>
-            <div>
-              <span class="text-slate-500 font-semibold">Anggaran Jarak Kediaman:</span>
-              <span id="voucherSchoolDistance" class="font-bold text-blue-700 ml-1"></span>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Penuh Ketua <span class="text-rose-500">*</span></label>
+                <input type="text" id="leaderName" required placeholder="Cth: NURHAFIZI BIN NORHADI" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">No. Kad Pengenalan <span class="text-rose-500">*</span></label>
+                <input type="text" id="leaderIc" required placeholder="Cth: 050218XXXXXX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Opsyen <span class="text-rose-500">*</span></label>
+                <select id="leaderSubject" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+                  <option value="">-- Pilih Opsyen --</option>
+                  <option value="Bahasa Melayu">Bahasa Melayu (BM)</option>
+                  <option value="Bahasa Inggeris (TESL)">Bahasa Inggeris (TESL)</option>
+                  <option value="Pendidikan Islam">Pendidikan Islam (PI)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Kelas dan Ambilan <span class="text-rose-500">*</span></label>
+                <input type="text" id="leaderClass" required placeholder="Cth: TESL B 2023-2028" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">No. Telefon <span class="text-rose-500">*</span></label>
+                <input type="tel" id="leaderPhone" required placeholder="Cth: 014379XXXX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Mentor <span class="text-rose-500">*</span></label>
+                <input type="text" id="leaderMentor" required placeholder="Cth: PUAN XYZ" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+              </div>
+
+              <!-- RESIDENTIAL AREA FOR DISTANCE CALCULATION -->
+              <div class="md:col-span-2 bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+                <label class="block text-xs font-bold text-ipgGold-400">
+                  <i class="fa-solid fa-location-dot mr-1"></i> Lokasi Kediaman <span class="text-rose-500">*</span>
+                </label>
+                <p class="text-[11px] text-slate-400">Lokasi ini digunakan oleh sistem untuk menganggarkan jarak antara rumah dan sekolah.</p>
+                <select id="leaderArea" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgGold-500 transition-all">
+                  <option value="">-- Pilih Kawasan Kediaman--</option>
+                  <optgroup label="Kuala Lumpur">
+                    <option value="Bangsar">Bangsar / Pantai Dalam</option>
+                    <option value="Setapak">Setapak / Wangsa Maju</option>
+                    <option value="Cheras">Cheras / Bandar Tun Razak</option>
+                    <option value="Sentul">Sentul / Segambut</option>
+                    <option value="Kepong">Kepong / Jinjang</option>
+                    <option value="Bukit Jalil">Bukit Jalil / Seri Kembangan</option>
+                  </optgroup>
+                  <optgroup label="Selangor">
+                    <option value="Shah Alam">Shah Alam (Seksyen 1 - 25)</option>
+                    <option value="Petaling Jaya">Petaling Jaya / Subang Jaya</option>
+                    <option value="Kajang">Kajang / Bandar Baru Bangi</option>
+                    <option value="Gombak">Gombak / Batu Caves / Selayang</option>
+                    <option value="Klang">Klang / Kapar</option>
+                    <option value="Puchong">Puchong / Cyberjaya</option>
+                  </optgroup>
+                </select>
+              </div>
             </div>
-            <div>
-              <span class="text-slate-500 font-semibold">Tarikh Pendaftaran:</span>
-              <span id="voucherDate" class="font-bold text-slate-900 ml-1"></span>
+          </div>
+
+          <!-- DYNAMIC AHLI KUMPULAN SECTION -->
+          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-users"></i> Maklumat Ahli Kumpulan
+                </h3>
+                <p id="memberRequirementNote" class="text-xs text-slate-400 mt-0.5"></p>
+                <p class="text-[11px] text-ipgGold-400 mt-1"><i class="fa-solid fa-circle-info mr-1"></i> Pastikan maklumat ahli anda adalah betul dan lengkap.</p>
+              </div>
             </div>
+
+            <!-- Ahli Form Container -->
+            <div id="membersContainer" class="space-y-4">
+              <!-- Dynamic Member Inputs Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- SUBMIT & PROCEED BUTTON -->
+          <div class="flex justify-end pt-2">
+            <button type="submit" id="step2SubmitBtn" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-ipgBlue-600 to-ipgBlue-500 hover:from-ipgBlue-500 hover:to-ipgBlue-600 text-white font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2">
+              <span>Seterusnya: Cari & Pilih Sekolah</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- STEP 3: SCHOOL SELECTION & REAL-TIME DISTANCE              -->
+      <!-- ========================================================= -->
+      <section id="stepSection-3" class="hidden space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 3: Pemilihan Sekolah Praktikum</h2>
+            <p class="text-xs text-slate-400">Jarak dianggarkan secara automatik. <span id="activeLeaderAreaBadge" class="text-ipgGold-400 font-bold"></span></p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="goToStep(2)" class="text-xs text-slate-400 hover:text-white px-3 py-2 rounded-xl bg-slate-800 border border-slate-700">
+              <i class="fa-solid fa-pen mr-1"></i> Edit Maklumat Kumpulan
+            </button>
           </div>
         </div>
 
-        <!-- Roster Table -->
-        <div class="space-y-2">
-          <h5 class="text-xs font-bold uppercase text-slate-700 tracking-wider">Senarai Ahli Kumpulan Praktikum:</h5>
-          <div class="overflow-x-auto border border-slate-200 rounded-xl">
-            <table class="w-full text-left text-xs bg-white">
-              <thead class="bg-slate-100 border-b border-slate-200 text-slate-700 font-bold">
-                <tr>
-                  <th class="p-2.5">Peranan</th>
-                  <th class="p-2.5">Nama Pelatih</th>
-                  <th class="p-2.5">No. IC</th>
-                  <th class="p-2.5">Opsyen</th>
-                  <th class="p-2.5">Kelas</th>
-                </tr>
-              </thead>
-              <tbody id="voucherRosterBody" class="divide-y divide-slate-200 bg-white text-slate-900">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
+        <!-- SEARCH & FILTER TOOLBAR -->
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-xl flex flex-col md:flex-row gap-3 items-center justify-between">
+          
+          <!-- Search Input -->
+          <div class="relative w-full md:w-80">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+            <input type="text" id="schoolSearchInput" oninput="filterSchools()" placeholder="Cari nama sekolah / kod..." class="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-ipgBlue-500">
+          </div>
+
+          <!-- Filter Controls -->
+          <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+            <select id="districtFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
+              <option value="ALL">Semua Daerah / PPD</option>
+            </select>
+
+            <select id="availabilityFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
+              <option value="ALL">Semua Status Kuota</option>
+              <option value="AVAILABLE">Ada Kekosongan</option>
+              <option value="FULL">Penuh / Lock</option>
+            </select>
+
+            <select id="sortFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
+              <option value="DISTANCE">Susun: Terdekat Dahulu</option>
+              <option value="NAME">Susun: Abjad Nama</option>
+              <option value="SLOTS">Susun: Kuota Terbanyak</option>
+            </select>
           </div>
         </div>
 
-        <!-- Note & Sign Off -->
-        <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-600 gap-4">
-          <p class="max-w-md italic">* Slip ini dihasilkan secara automatik. Slip ini hanya sebagai bukti pendaftaran.</p>
-          <div class="text-center sm:text-right">
-            <div class="font-bold text-slate-900">Cik Kasmawati</div>
-            <div class="text-[10px] text-slate-600">Ketua Jabatan Unit Praktikum</div>
-            <div class="text-[10px] text-slate-600">IPG Kampus Bahasa Antarabangsa</div>
+        <!-- SCHOOL LIST GRID -->
+        <div id="schoolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- School Cards Injected Via JS -->
+        </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- STEP 4: PLACEMENT VOUCHER SLIP (PRINTABLE)                -->
+      <!-- ========================================================= -->
+      <section id="stepSection-4" class="hidden space-y-6">
+        
+        <div class="no-print text-center max-w-2xl mx-auto space-y-2">
+          <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 mx-auto flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Penempatan Berjaya Disahkan!</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Tahniah. Maklumat kumpulan anda telah didaftarkan secara rasmi. Sila cetak slip ini sebagai bukti.</p>
+          
+          <div class="pt-3 flex flex-wrap items-center justify-center gap-3">
+            <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-ipgGold-500 hover:bg-ipgGold-600 text-slate-950 font-extrabold text-xs shadow-lg transition-all flex items-center gap-2">
+              <i class="fa-solid fa-print"></i> Cetak / Simpan PDF
+            </button>
+            <button onclick="switchPortalView('semak')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 flex items-center gap-2">
+              <i class="fa-solid fa-magnifying-glass"></i> Semak / Batal Penempatan
+            </button>
+            <button onclick="resetRegistration()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs border border-slate-700">
+              Daftar Kumpulan Baru
+            </button>
           </div>
         </div>
 
+        <!-- OFFICIAL SLIP PRINTABLE CONTAINER -->
+        <div id="printableVoucher" class="max-w-3xl mx-auto bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200 space-y-6">
+          
+          <!-- Header Section -->
+          <div class="border-b-2 border-slate-900 pb-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-11 h-11 rounded-xl bg-white border border-ipgGold-500/60 flex items-center justify-center overflow-hidden shadow-sm">
+                <img src="logo3.png" alt="Logo IPGKBA" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <h3 class="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight uppercase">Institut Pendidikan Guru Malaysia</h3>
+                <p class="text-xs text-slate-600 font-semibold">Unit Praktikum IPGKBA</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-full border border-emerald-300">DISAHKAN</span>
+            </div>
+          </div>
+
+          <!-- Slip Title -->
+          <div class="text-center py-2.5 bg-slate-100 rounded-xl border border-slate-200">
+            <h4 class="font-black text-slate-900 uppercase tracking-wide text-sm sm:text-base">SLIP PENGESAHAN PENEMPATAN PRAKTIKUM</h4>
+          </div>
+
+          <!-- School Placement Info (Strictly School Name, Phone & Email) -->
+          <div class="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 text-xs space-y-3">
+            <div>
+              <span class="text-slate-500 font-semibold block text-[11px] uppercase tracking-wider">Nama Sekolah:</span>
+              <span id="voucherSchoolName" class="font-black text-base text-slate-900 block mt-0.5"></span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-200">
+              <div>
+                <span class="text-slate-500 font-semibold block text-[11px]">No. Telefon Sekolah:</span>
+                <span id="voucherSchoolPhone" class="font-bold text-slate-900 text-sm"></span>
+              </div>
+              <div>
+                <span class="text-slate-500 font-semibold block text-[11px]">E-mel Sekolah:</span>
+                <span id="voucherSchoolEmail" class="font-bold text-blue-700 text-sm"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Roster Table (Strictly Full Name, IC & Opsyen) -->
+          <div class="space-y-2">
+            <h5 class="text-xs font-bold uppercase text-slate-700 tracking-wider">Senarai Ahli Kumpulan Praktikum:</h5>
+            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+              <table class="w-full text-left text-xs bg-white">
+                <thead class="bg-slate-100 border-b border-slate-200 text-slate-700 font-bold">
+                  <tr>
+                    <th class="p-3">Nama Penuh</th>
+                    <th class="p-3">No. Kad Pengenalan (IC)</th>
+                    <th class="p-3">Opsyen</th>
+                  </tr>
+                </thead>
+                <tbody id="voucherRosterBody" class="divide-y divide-slate-200 bg-white text-slate-900">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Note & Sign Off -->
+          <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-600 gap-4">
+            <p class="max-w-md italic">* Slip ini dihasilkan secara automatik. Slip ini hanya sebagai bukti pendaftaran.</p>
+            <div class="text-center sm:text-right">
+              <div class="font-bold text-slate-900">Cik Kasmawati</div>
+              <div class="text-[10px] text-slate-600">Ketua Unit Praktikum</div>
+              <div class="text-[10px] text-slate-600">IPG Kampus Bahasa Antarabangsa</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- VIEW B: SEMAK & BATAL PENEMPATAN (BY LEADER IC)           -->
+    <!-- ========================================================= -->
+    <section id="semakViewContainer" class="hidden space-y-6 max-w-3xl mx-auto w-full">
+      
+      <div class="text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-ipgBlue-500/20 border border-ipgBlue-500/40 text-ipgBlue-400 mx-auto flex items-center justify-center text-xl">
+          <i class="fa-solid fa-file-circle-question"></i>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white">Semak & Batal Penempatan</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Masukkan <strong class="text-slate-200">No. Kad Pengenalan (IC) Ketua Kumpulan</strong> untuk menyemak maklumat sekolah yang telah didaftarkan atau membatalkan penempatan bagi memilih sekolah baharu.</p>
       </div>
+
+      <!-- IC Search Box -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
+        <form id="semakForm" class="flex flex-col sm:flex-row gap-3">
+          <div class="relative flex-grow">
+            <i class="fa-solid fa-id-card absolute left-4 top-3.5 text-slate-400 text-sm"></i>
+            <input type="text" id="semakIcInput" required placeholder="Masukkan No. IC Ketua Kumpulan (Cth: 02051210XXXX)" class="w-full bg-slate-950 border border-slate-700 rounded-2xl pl-11 pr-4 py-3 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+          </div>
+          <button type="submit" class="px-6 py-3 rounded-2xl bg-ipgBlue-600 hover:bg-ipgBlue-500 text-white font-extrabold text-sm shadow-lg transition-all flex items-center justify-center gap-2 shrink-0">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Semak Status</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Search Result Container -->
+      <div id="semakResultContainer" class="hidden">
+        <!-- Injected dynamically via JS -->
+      </div>
+
     </section>
 
   </main>
 
   <!-- ========================================================= -->
-  <!-- JAVASCRIPT & FIREBASE ENGINE (EVERY SCHOOL maxGroups: 1)  -->
+  <!-- MODAL: PENGESAHAN PEMBATALAN PENEMPATAN                   -->
+  <!-- ========================================================= -->
+  <div id="cancelPlacementModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl space-y-5 text-center">
+      <div class="w-14 h-14 rounded-2xl bg-rose-500/20 border border-rose-500/40 text-rose-400 mx-auto flex items-center justify-center text-2xl">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <div class="space-y-2">
+        <h3 class="text-lg font-black text-white">Batalkan Penempatan Sekolah?</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Adakah anda pasti mahu membatalkan penempatan di <strong id="cancelModalSchoolName" class="text-ipgGold-400"></strong>?
+        </p>
+        <p class="text-[11px] text-slate-400">
+          Slot sekolah ini akan dibuka semula kepada pelajar lain dan anda perlu membuat pendaftaran baharu sekiranya ingin memilih sekolah lain.
+        </p>
+      </div>
+      <div class="flex items-center justify-center gap-3 pt-2">
+        <button onclick="closeCancelModal()" class="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs border border-slate-700">
+          Tidak, Kekalkan
+        </button>
+        <button id="confirmCancelBtn" onclick="executePlacementCancellation()" class="flex-1 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-extrabold text-xs shadow-lg">
+          Ya, Batalkan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT & FIREBASE ENGINE                              -->
   <!-- ========================================================= -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
@@ -535,20 +625,20 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    // Initial Default Schools Data (ALL maxGroups: 1, Exactly 1 Subject Each)
+    // Initial Default Schools Data (with School Phone & Email)
     const INITIAL_SCHOOLS = [
-      { id: 'SK-KL-01', name: 'SK Bangsar', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Pantai Baharu, 59200 Kuala Lumpur', maxGroups: 1, bookedGroups: 0, lat: 3.1189, lng: 101.6732, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-KL-02', name: 'SK Taman Melawati', state: 'KL', district: 'PPD Keramat', address: 'Jalan Melawati 5, 53100 Kuala Lumpur', maxGroups: 1, bookedGroups: 0, lat: 3.2104, lng: 101.7495, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-KL-03', name: 'SK Seri Setia', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kuchai Lama, 58200 Kuala Lumpur', maxGroups: 1, bookedGroups: 0, lat: 3.0891, lng: 101.6894, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-KL-04', name: 'SK Sentul Utama', state: 'KL', district: 'PPD Sentul', address: 'Jalan Sentul, 51100 Kuala Lumpur', maxGroups: 1, bookedGroups: 0, lat: 3.1874, lng: 101.6921, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-KL-05', name: 'SK Bandar Tun Razak 1', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sembilang, 56000 Kuala Lumpur', maxGroups: 1, bookedGroups: 0, lat: 3.0934, lng: 101.7210, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-KL-06', name: 'SK Kepong Baru', state: 'KL', district: 'PPD Sentul', address: 'Jalan Api Api, 52100 Kuala Lumpur', maxGroups: 1, bookedGroups: 0, lat: 3.2120, lng: 101.6412, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-SEL-01', name: 'SK Seksyen 7 Shah Alam', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan Tungsten 7/23, 40000 Shah Alam', maxGroups: 1, bookedGroups: 0, lat: 3.0782, lng: 101.4912, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-SEL-02', name: 'SK Subang Jaya', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 14/1, 47500 Subang Jaya', maxGroups: 1, bookedGroups: 0, lat: 3.0645, lng: 101.5891, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-SEL-03', name: 'SK Saujana Impian Kajang', state: 'Selangor', district: 'PPD Hulu Langat', address: 'KM 22 Jalan Cheras, 43000 Kajang', maxGroups: 1, bookedGroups: 0, lat: 3.0084, lng: 101.7892, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-SEL-04', name: 'SK Gombak Setia', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan 9, Gombak Setia, 53100 Kuala Lumpur', maxGroups: 1, bookedGroups: 0, lat: 3.2201, lng: 101.7192, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-SEL-05', name: 'SK Petaling Jaya', state: 'Selangor', district: 'PPD Petaling Utama', address: 'Jalan 1/9, 46000 Petaling Jaya', maxGroups: 1, bookedGroups: 0, lat: 3.0921, lng: 101.6421, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-SEL-06', name: 'SK Bandar Baru Bangi', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan 2/1, 43650 Bandar Baru Bangi', maxGroups: 1, bookedGroups: 0, lat: 2.9641, lng: 101.7753, subjectsNeeded: ['Pendidikan Islam'] }
+      { id: 'SK-KL-01', name: 'SK Bangsar', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Pantai Baharu, 59200 Kuala Lumpur', phone: '03-2282 1420', email: 'wba0001@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1189, lng: 101.6732, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-KL-02', name: 'SK Taman Melawati', state: 'KL', district: 'PPD Keramat', address: 'Jalan Melawati 5, 53100 Kuala Lumpur', phone: '03-4107 1954', email: 'bba7215@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2104, lng: 101.7495, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-KL-03', name: 'SK Seri Setia', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kuchai Lama, 58200 Kuala Lumpur', phone: '03-7983 1621', email: 'wba0048@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0891, lng: 101.6894, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-KL-04', name: 'SK Sentul Utama', state: 'KL', district: 'PPD Sentul', address: 'Jalan Sentul, 51100 Kuala Lumpur', phone: '03-4041 3288', email: 'wba0062@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1874, lng: 101.6921, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-KL-05', name: 'SK Bandar Tun Razak 1', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sembilang, 56000 Kuala Lumpur', phone: '03-9171 3890', email: 'wba0054@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0934, lng: 101.7210, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-KL-06', name: 'SK Kepong Baru', state: 'KL', district: 'PPD Sentul', address: 'Jalan Api Api, 52100 Kuala Lumpur', phone: '03-6274 1345', email: 'wba0019@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2120, lng: 101.6412, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-SEL-01', name: 'SK Seksyen 7 Shah Alam', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan Tungsten 7/23, 40000 Shah Alam', phone: '03-5510 8912', email: 'bba8264@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0782, lng: 101.4912, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-SEL-02', name: 'SK Subang Jaya', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 14/1, 47500 Subang Jaya', phone: '03-5633 2411', email: 'bba8219@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0645, lng: 101.5891, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-SEL-03', name: 'SK Saujana Impian Kajang', state: 'Selangor', district: 'PPD Hulu Langat', address: 'KM 22 Jalan Cheras, 43000 Kajang', phone: '03-8737 4120', email: 'bba4045@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0084, lng: 101.7892, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-SEL-04', name: 'SK Gombak Setia', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan 9, Gombak Setia, 53100 Kuala Lumpur', phone: '03-6189 4521', email: 'bba7204@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2201, lng: 101.7192, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-SEL-05', name: 'SK Petaling Jaya', state: 'Selangor', district: 'PPD Petaling Utama', address: 'Jalan 1/9, 46000 Petaling Jaya', phone: '03-7782 9104', email: 'bba8202@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0921, lng: 101.6421, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-SEL-06', name: 'SK Bandar Baru Bangi', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan 2/1, 43650 Bandar Baru Bangi', phone: '03-8925 0418', email: 'bba4028@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9641, lng: 101.7753, subjectsNeeded: ['Pendidikan Islam'] }
     ];
 
     const LOCATION_COORDS = {
@@ -567,12 +657,16 @@
     };
 
     let appState = {
+      activeView: 'register', // 'register' | 'semak'
       currentStep: 1,
       selectedNegeri: null,
       leaderData: {},
       membersData: [],
       selectedSchool: null,
-      schools: []
+      schools: [],
+      placements: [],
+      isSystemOnline: true,
+      pendingCancelPlacement: null
     };
 
     // Global setup & Firebase Auth Initialization
@@ -583,7 +677,7 @@
         } else {
           await signInAnonymously(auth);
         }
-        setupRealtimeSchools();
+        setupRealtimeListeners();
       } catch (err) {
         console.error("Auth / Initial Setup Error:", err);
         appState.schools = INITIAL_SCHOOLS;
@@ -591,10 +685,25 @@
       renderStep();
     });
 
-    // Real-Time Listener for Schools Collection (Firestore)
-    function setupRealtimeSchools() {
+    // Real-Time Listeners for Schools, Placements & System Online/Offline Status
+    function setupRealtimeListeners() {
       const schoolsCollRef = collection(db, 'artifacts', appId, 'public', 'data', 'schools');
+      const placementsCollRef = collection(db, 'artifacts', appId, 'public', 'data', 'placements');
+      const configDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'settings', 'systemConfig');
 
+      // 1. System Online/Offline Status Listener
+      onSnapshot(configDocRef, (docSnap) => {
+        if (docSnap.exists()) {
+          appState.isSystemOnline = docSnap.data().isOnline !== false;
+        } else {
+          appState.isSystemOnline = true;
+        }
+        applySystemOnlineState();
+      }, (error) => {
+        console.error("System Config Snapshot Error:", error);
+      });
+
+      // 2. Schools Collection Listener
       onSnapshot(schoolsCollRef, (snapshot) => {
         if (snapshot.empty) {
           INITIAL_SCHOOLS.forEach(async (school) => {
@@ -603,16 +712,84 @@
           });
           appState.schools = INITIAL_SCHOOLS;
         } else {
-          appState.schools = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+          appState.schools = snapshot.docs.map(d => {
+            const data = d.data();
+            const fallback = INITIAL_SCHOOLS.find(s => s.id === d.id);
+            return {
+              id: d.id,
+              ...data,
+              phone: data.phone || fallback?.phone || '-',
+              email: data.email || fallback?.email || '-'
+            };
+          });
         }
 
-        if (appState.currentStep === 3) {
+        if (appState.currentStep === 3 && appState.activeView === 'register') {
           filterSchools();
         }
       }, (error) => {
-        console.error("Realtime Snapshot Error:", error);
+        console.error("Realtime Schools Snapshot Error:", error);
+      });
+
+      // 3. Placements Collection Listener (for Semakan & Duplicate Check)
+      onSnapshot(placementsCollRef, (snapshot) => {
+        appState.placements = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+      }, (error) => {
+        console.error("Realtime Placements Snapshot Error:", error);
       });
     }
+
+    // Apply System Online / Offline UI Restrictions
+    function applySystemOnlineState() {
+      const banner = document.getElementById('systemOfflineBanner');
+      const cardKL = document.getElementById('cardNegeriKL');
+      const cardSel = document.getElementById('cardNegeriSelangor');
+      const step2Btn = document.getElementById('step2SubmitBtn');
+
+      if (!appState.isSystemOnline) {
+        banner.classList.remove('hidden');
+        cardKL.classList.add('opacity-50', 'cursor-not-allowed');
+        cardSel.classList.add('opacity-50', 'cursor-not-allowed');
+        if (step2Btn) {
+          step2Btn.disabled = true;
+          step2Btn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+      } else {
+        banner.classList.add('hidden');
+        cardKL.classList.remove('opacity-50', 'cursor-not-allowed');
+        cardSel.classList.remove('opacity-50', 'cursor-not-allowed');
+        if (step2Btn) {
+          step2Btn.disabled = false;
+          step2Btn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+      }
+
+      if (appState.currentStep === 3 && appState.activeView === 'register') {
+        filterSchools();
+      }
+    }
+
+    // Switch Top-Level View ('register' vs 'semak')
+    window.switchPortalView = function(view) {
+      appState.activeView = view;
+      const regContainer = document.getElementById('registerViewContainer');
+      const semakContainer = document.getElementById('semakViewContainer');
+      const btnReg = document.getElementById('navBtn-register');
+      const btnSemak = document.getElementById('navBtn-semak');
+
+      if (view === 'register') {
+        regContainer.classList.remove('hidden');
+        semakContainer.classList.add('hidden');
+        btnReg.className = 'px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-xs font-bold shadow transition-all flex items-center gap-1.5';
+        btnSemak.className = 'px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-all flex items-center gap-1.5';
+      } else {
+        semakContainer.classList.remove('hidden');
+        regContainer.classList.add('hidden');
+        btnSemak.className = 'px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-xs font-bold shadow transition-all flex items-center gap-1.5';
+        btnReg.className = 'px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-all flex items-center gap-1.5';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     // Step Stepper Navigation
     window.goToStep = function(stepNumber) {
@@ -621,42 +798,42 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    
-function renderStep() {
-  for (let i = 1; i <= 4; i++) {
-    const sec = document.getElementById(`stepSection-${i}`);
-    const tab = document.getElementById(`stepTab-${i}`);
+    function renderStep() {
+      for (let i = 1; i <= 4; i++) {
+        const sec = document.getElementById(`stepSection-${i}`);
+        const tab = document.getElementById(`stepTab-${i}`);
 
-    if (i === appState.currentStep) {
-      sec.classList.remove('hidden');
-      tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white font-bold transition-all shadow-md';
-    } else {
-      sec.classList.add('hidden');
+        if (i === appState.currentStep) {
+          sec.classList.remove('hidden');
+          tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white font-bold transition-all shadow-md';
+        } else {
+          sec.classList.add('hidden');
 
-      if (i < appState.currentStep) {
-        // Teal/Cyan styling for completed steps
-        tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-cyan-950/50 text-cyan-400 font-semibold border border-cyan-800/40 transition-all';
-      } else {
-        // Pending steps
-        tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-900 text-slate-500 font-medium border border-slate-800 transition-all';
+          if (i < appState.currentStep) {
+            tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-cyan-950/50 text-cyan-400 font-semibold border border-cyan-800/40 transition-all';
+          } else {
+            tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-900 text-slate-500 font-medium border border-slate-800 transition-all';
+          }
+        }
+      }
+
+      if (appState.currentStep === 3) {
+        renderSchoolsList();
       }
     }
-  }
-
-  // TAMBAH SEMULA BARIS INI SUPAYA SENARAI SEKOLAH DIPAPARKAN PADA LANGKAH 3
-  if (appState.currentStep === 3) {
-    renderSchoolsList();
-  }
-}
-
 
     window.selectNegeri = function(negeri) {
+      if (!appState.isSystemOnline) {
+        showToast('Sistem tidak dalam talian (Offline). Tiada penghantaran baharu diterima.', 'error');
+        return;
+      }
       appState.selectedNegeri = negeri;
       showToast(`Negeri ${negeri} dipilih. Sila isi maklumat ahli kumpulan.`, 'info');
       buildMemberFormFields();
       goToStep(2);
     };
 
+    // Build Member Form Fields (No Opsyen field; includes Mentor field)
     function buildMemberFormFields() {
       const container = document.getElementById('membersContainer');
       const note = document.getElementById('memberRequirementNote');
@@ -668,7 +845,8 @@ function renderStep() {
         note.innerHTML = '<span class="text-ipgBlue-400 font-bold">* Selangor Memerlukan 3 hingga 4 Orang Guru Pelatih</span>.';
       }
 
-      for (let i = 1; i <= (appState.selectedNegeri === 'KL' ? 1 : 3); i++) {
+      const memberCount = (appState.selectedNegeri === 'KL' ? 1 : 3);
+      for (let i = 1; i <= memberCount; i++) {
         const isOptional = (appState.selectedNegeri === 'Selangor' && i === 3);
         
         const memberCard = document.createElement('div');
@@ -686,15 +864,10 @@ function renderStep() {
               <input type="text" id="memberIc_${i}" ${!isOptional ? 'required' : ''} placeholder="No. IC Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
             </div>
             <div>
-              <select id="memberSubject_${i}" ${!isOptional ? 'required' : ''} class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
-                <option value="">-- Opsyen --</option>
-                <option value="Bahasa Melayu">Bahasa Melayu</option>
-                <option value="Bahasa Inggeris (TESL)">Bahasa Inggeris (TESL)</option>
-                <option value="Pendidikan Islam">Pendidikan Islam</option>
-              </select>
+              <input type="text" id="memberClass_${i}" ${!isOptional ? 'required' : ''} placeholder="Kelas (Cth: TESL B 2023)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
             </div>
             <div>
-              <input type="text" id="memberClass_${i}" ${!isOptional ? 'required' : ''} placeholder="Kelas (Cth: TESL B 2023)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
+              <input type="text" id="memberMentor_${i}" ${!isOptional ? 'required' : ''} placeholder="Nama Mentor Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
             </div>
           </div>
         `;
@@ -702,15 +875,37 @@ function renderStep() {
       }
     }
 
+    function normalizeIc(icStr) {
+      return String(icStr || '').replace(/[^0-9a-zA-Z]/g, '').toUpperCase();
+    }
+
     document.getElementById('groupForm').addEventListener('submit', (event) => {
       event.preventDefault();
 
+      if (!appState.isSystemOnline) {
+        showToast('Sistem tidak dalam talian (Offline). Tiada penghantaran baharu diterima.', 'error');
+        return;
+      }
+
+      const leaderIcRaw = document.getElementById('leaderIc').value.trim();
+      const normLeaderIc = normalizeIc(leaderIcRaw);
+
+      // Check if this leader already has an active placement
+      const existingPlacement = appState.placements.find(p => normalizeIc(p.leader?.ic) === normLeaderIc);
+      if (existingPlacement) {
+        showToast(`No. IC Ketua ini telah berdaftar di ${existingPlacement.school?.name}. Sila ke halaman 'Semak / Batal' jika ingin membatalkan penempatan sedia ada.`, 'error');
+        return;
+      }
+
+      const leaderSubject = document.getElementById('leaderSubject').value;
+
       appState.leaderData = {
         name: document.getElementById('leaderName').value.trim(),
-        ic: document.getElementById('leaderIc').value.trim(),
-        subject: document.getElementById('leaderSubject').value,
+        ic: leaderIcRaw,
+        subject: leaderSubject,
         class: document.getElementById('leaderClass').value.trim(),
         phone: document.getElementById('leaderPhone').value.trim(),
+        mentor: document.getElementById('leaderMentor').value.trim(),
         area: document.getElementById('leaderArea').value
       };
 
@@ -720,13 +915,20 @@ function renderStep() {
       for (let i = 1; i <= totalPossibleMembers; i++) {
         const nameVal = document.getElementById(`memberName_${i}`)?.value.trim();
         const icVal = document.getElementById(`memberIc_${i}`)?.value.trim();
-        const subjVal = document.getElementById(`memberSubject_${i}`)?.value;
         const classVal = document.getElementById(`memberClass_${i}`)?.value.trim();
+        const mentorVal = document.getElementById(`memberMentor_${i}`)?.value.trim();
 
-        if (nameVal && icVal && subjVal && classVal) {
-          appState.membersData.push({ name: nameVal, ic: icVal, subject: subjVal, class: classVal });
-        } else if (nameVal || icVal || subjVal || classVal) {
-          showToast(`Sila lengkapkan semua butiran bagi Ahli Kumpulan ${i} (Nama, No. IC, Opsyen & Kelas)!`, 'error');
+        if (nameVal && icVal && classVal && mentorVal) {
+          // Inherit leader's opsyen automatically
+          appState.membersData.push({
+            name: nameVal,
+            ic: icVal,
+            subject: leaderSubject,
+            class: classVal,
+            mentor: mentorVal
+          });
+        } else if (nameVal || icVal || classVal || mentorVal) {
+          showToast(`Sila lengkapkan semua butiran bagi Ahli Kumpulan ${i} (Nama, No. IC, Kelas & Nama Mentor)!`, 'error');
           return;
         }
       }
@@ -778,7 +980,6 @@ function renderStep() {
       const leaderCoords = LOCATION_COORDS[leaderAreaKey] || LOCATION_COORDS['Bangsar'];
       const leaderSubject = appState.leaderData.subject;
 
-      // Filter by State AND strictly by Leader's Subject Option
       let list = appState.schools.filter(s => s.state === appState.selectedNegeri && s.subjectsNeeded && s.subjectsNeeded.includes(leaderSubject));
 
       list.forEach(s => {
@@ -821,9 +1022,28 @@ function renderStep() {
       list.forEach(school => {
         const slotsLeft = Math.max(0, school.maxGroups - school.bookedGroups);
         const isFull = slotsLeft <= 0;
+        const isOffline = !appState.isSystemOnline;
 
         const card = document.createElement('div');
         card.className = `bg-slate-900 border ${isFull ? 'border-rose-900/50 opacity-80' : 'border-slate-800 hover:border-ipgBlue-500'} rounded-3xl p-5 shadow-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden`;
+
+        let actionButtonHtml = '';
+        if (isOffline) {
+          actionButtonHtml = `
+            <button disabled class="w-full py-2.5 rounded-xl bg-rose-950/80 text-rose-300 font-bold text-xs border border-rose-800/80 cursor-not-allowed flex items-center justify-center gap-2">
+              <i class="fa-solid fa-power-off"></i> Sistem Offline
+            </button>`;
+        } else if (isFull) {
+          actionButtonHtml = `
+            <button disabled class="w-full py-2.5 rounded-xl bg-slate-950 text-slate-600 font-bold text-xs border border-slate-800 cursor-not-allowed flex items-center justify-center gap-2">
+              <i class="fa-solid fa-ban"></i> Slot Sekolah Penuh
+            </button>`;
+        } else {
+          actionButtonHtml = `
+            <button onclick="confirmSchoolSelection('${school.id}')" class="w-full py-2.5 rounded-xl bg-ipgBlue-600 hover:bg-ipgBlue-500 text-white font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-circle-check"></i> Pilih Sekolah Ini
+            </button>`;
+        }
 
         card.innerHTML = `
           <div class="space-y-4">
@@ -842,8 +1062,20 @@ function renderStep() {
             </div>
 
             <div>
-              <h3 class="text-lg font-bold text-white group-hover:text-ipgBlue-400 transition-colors">${school.name}</h3>
+              <h3 class="text-lg font-bold text-white transition-colors">${school.name}</h3>
               <p class="text-xs text-slate-400 mt-1 line-clamp-2"><i class="fa-solid fa-location-dot text-slate-500 mr-1"></i> ${school.address}</p>
+              
+              <!-- School Phone & Email -->
+              <div class="mt-2.5 pt-2.5 border-t border-slate-800/80 space-y-1 text-xs">
+                <div class="flex items-center gap-2 text-slate-300">
+                  <i class="fa-solid fa-phone text-ipgGold-400 text-[11px] w-3.5"></i>
+                  <span>${school.phone || '-'}</span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-300">
+                  <i class="fa-solid fa-envelope text-ipgBlue-400 text-[11px] w-3.5"></i>
+                  <span class="truncate">${school.email || '-'}</span>
+                </div>
+              </div>
             </div>
 
             <div class="bg-slate-950 p-3 rounded-2xl border border-slate-800 flex items-center justify-between text-xs">
@@ -871,14 +1103,7 @@ function renderStep() {
           </div>
 
           <div class="mt-5 pt-4 border-t border-slate-800">
-            ${isFull ? 
-              `<button disabled class="w-full py-2.5 rounded-xl bg-slate-950 text-slate-600 font-bold text-xs border border-slate-800 cursor-not-allowed flex items-center justify-center gap-2">
-                <i class="fa-solid fa-ban"></i> Slot Sekolah Penuh
-               </button>` :
-              `<button onclick="confirmSchoolSelection('${school.id}')" class="w-full py-2.5 rounded-xl bg-ipgBlue-600 hover:bg-ipgBlue-500 text-white font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-circle-check"></i> Pilih Sekolah Ini
-               </button>`
-            }
+            ${actionButtonHtml}
           </div>
         `;
 
@@ -888,6 +1113,18 @@ function renderStep() {
 
     // ATOMIC TRANSACTION LOCK (PREVENTS "BEREBUT" RACE CONDITION)
     window.confirmSchoolSelection = async function(schoolId) {
+      if (!appState.isSystemOnline) {
+        showToast('Sistem tidak dalam talian (Offline). Tiada penghantaran baharu diterima.', 'error');
+        return;
+      }
+
+      const normLeaderIc = normalizeIc(appState.leaderData.ic);
+      const existingPlacement = appState.placements.find(p => normalizeIc(p.leader?.ic) === normLeaderIc);
+      if (existingPlacement) {
+        showToast(`No. IC Ketua ini sudah mempunyai penempatan di ${existingPlacement.school?.name}.`, 'error');
+        return;
+      }
+
       const schoolRef = doc(db, 'artifacts', appId, 'public', 'data', 'schools', schoolId);
       const refCode = `PRK-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
 
@@ -905,6 +1142,10 @@ function renderStep() {
             throw new Error("PENUH: Slot sekolah ini telah pun dipilih oleh kumpulan lain milisaat tadi!");
           }
 
+          const localSchool = appState.schools.find(s => s.id === schoolId);
+          const schoolPhone = currentData.phone || localSchool?.phone || '-';
+          const schoolEmail = currentData.email || localSchool?.email || '-';
+
           transaction.update(schoolRef, { bookedGroups: currentData.bookedGroups + 1 });
 
           const placementRef = doc(db, 'artifacts', appId, 'public', 'data', 'placements', refCode);
@@ -918,7 +1159,9 @@ function renderStep() {
               name: currentData.name,
               address: currentData.address,
               district: currentData.district,
-              calculatedDistance: appState.schools.find(s => s.id === schoolId)?.calculatedDistance || '0'
+              phone: schoolPhone,
+              email: schoolEmail,
+              calculatedDistance: localSchool?.calculatedDistance || '0'
             },
             leader: appState.leaderData,
             members: appState.membersData
@@ -937,37 +1180,224 @@ function renderStep() {
       }
     };
 
+    // Render Slip strictly with Full Name, IC, Opsyen, School Name, School Contact Number & School Email
     function renderVoucher(placement) {
-      document.getElementById('voucherRefCode').innerText = placement.refCode;
-      document.getElementById('voucherSchoolName').innerText = placement.school.name;
-      document.getElementById('voucherSchoolAddress').innerText = placement.school.address;
-      document.getElementById('voucherSchoolDistrict').innerText = placement.school.district;
-      document.getElementById('voucherSchoolDistance').innerText = `${placement.school.calculatedDistance} KM (${placement.leader.area})`;
-      document.getElementById('voucherDate').innerText = placement.date;
+      document.getElementById('voucherSchoolName').innerText = placement.school?.name || '-';
+      document.getElementById('voucherSchoolPhone').innerText = placement.school?.phone || '-';
+      document.getElementById('voucherSchoolEmail').innerText = placement.school?.email || '-';
 
+      const leaderSubject = placement.leader?.subject || '-';
       const tbody = document.getElementById('voucherRosterBody');
       tbody.innerHTML = `
         <tr class="bg-blue-50/70">
-          <td class="p-2.5 font-bold text-blue-900"><span class="bg-blue-200 text-blue-900 text-[10px] px-2 py-0.5 rounded font-bold">KETUA</span></td>
-          <td class="p-2.5 font-bold text-slate-900">${placement.leader.name}</td>
-          <td class="p-2.5 text-slate-800">${placement.leader.ic}</td>
-          <td class="p-2.5 text-slate-800 font-medium">${placement.leader.subject}</td>
-          <td class="p-2.5 text-slate-800 font-semibold">${placement.leader.class || '-'}</td>
+          <td class="p-3 font-bold text-slate-900">${placement.leader?.name || '-'}</td>
+          <td class="p-3 text-slate-800 font-mono">${placement.leader?.ic || '-'}</td>
+          <td class="p-3 text-slate-800 font-semibold">${leaderSubject}</td>
         </tr>
       `;
 
-      placement.members.forEach((m, idx) => {
+      (placement.members || []).forEach((m) => {
         tbody.innerHTML += `
           <tr class="bg-white">
-            <td class="p-2.5 font-semibold text-slate-700">Ahli ${idx + 1}</td>
-            <td class="p-2.5 font-bold text-slate-900">${m.name}</td>
-            <td class="p-2.5 text-slate-800">${m.ic}</td>
-            <td class="p-2.5 text-slate-800 font-medium">${m.subject}</td>
-            <td class="p-2.5 text-slate-800 font-semibold">${m.class || '-'}</td>
+            <td class="p-3 font-bold text-slate-900">${m.name || '-'}</td>
+            <td class="p-3 text-slate-800 font-mono">${m.ic || '-'}</td>
+            <td class="p-3 text-slate-800 font-semibold">${m.subject || leaderSubject}</td>
           </tr>
         `;
       });
     }
+
+    // =========================================================
+    // SEMAKAN & PEMBATALAN ENGINE
+    // =========================================================
+    document.getElementById('semakForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputIc = normalizeIc(document.getElementById('semakIcInput').value);
+      const resultContainer = document.getElementById('semakResultContainer');
+
+      if (!inputIc) return;
+
+      // Match by Leader's IC primarily (or fallback to any member IC in the group)
+      const matchedPlacement = appState.placements.find(p => {
+        const leaderMatch = normalizeIc(p.leader?.ic) === inputIc;
+        const memberMatch = (p.members || []).some(m => normalizeIc(m.ic) === inputIc);
+        return leaderMatch || memberMatch;
+      });
+
+      resultContainer.classList.remove('hidden');
+
+      if (!matchedPlacement) {
+        resultContainer.innerHTML = `
+          <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 text-center space-y-3 shadow-xl">
+            <div class="w-12 h-12 rounded-2xl bg-slate-800 text-slate-400 mx-auto flex items-center justify-center text-xl">
+              <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Tiada Rekod Penempatan Ditemui</h3>
+            <p class="text-xs text-slate-400 max-w-md mx-auto">No. Kad Pengenalan yang dimasukkan tidak mempunyai sebarang pendaftaran sekolah yang aktif. Sila semak semula nombor IC atau buat pendaftaran baharu.</p>
+            <div class="pt-2">
+              <button onclick="switchPortalView('register')" class="px-5 py-2.5 rounded-xl bg-ipgBlue-600 hover:bg-ipgBlue-500 text-white font-bold text-xs shadow-lg">
+                Pergi ke Pendaftaran Baharu
+              </button>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const leaderSubject = matchedPlacement.leader?.subject || '-';
+      const allTrainees = [
+        { role: 'Ketua', ...matchedPlacement.leader, subject: leaderSubject },
+        ...(matchedPlacement.members || []).map((m, i) => ({
+          role: `Ahli ${i + 1}`,
+          ...m,
+          subject: m.subject || leaderSubject
+        }))
+      ];
+
+      // Store reference globally for reprint / cancel actions
+      window.__currentCheckedPlacement = matchedPlacement;
+
+      resultContainer.innerHTML = `
+        <div class="bg-slate-900/95 border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/90 px-2.5 py-1 rounded-full border border-emerald-700/70">
+                <i class="fa-solid fa-circle-check mr-1"></i> PENEMPATAN DISAHKAN
+              </span>
+              <h3 class="text-xl font-black text-white mt-2">${matchedPlacement.school?.name || '-'}</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Kod Rujukan: <span class="font-mono font-bold text-ipgGold-400">${matchedPlacement.refCode}</span> • Negeri: <span class="text-slate-200 font-semibold">${matchedPlacement.negeri}</span></p>
+            </div>
+          </div>
+
+          <!-- School Contact Details -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-950/90 p-4 rounded-2xl border border-slate-800 text-xs">
+            <div>
+              <span class="text-slate-400 block text-[11px]">No. Telefon Sekolah:</span>
+              <span class="font-bold text-white text-sm mt-0.5 block"><i class="fa-solid fa-phone text-ipgGold-400 mr-1.5"></i>${matchedPlacement.school?.phone || '-'}</span>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[11px]">E-mel Sekolah:</span>
+              <span class="font-bold text-ipgBlue-400 text-sm mt-0.5 block"><i class="fa-solid fa-envelope mr-1.5"></i>${matchedPlacement.school?.email || '-'}</span>
+            </div>
+          </div>
+
+          <!-- Group Members Table -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Senarai Ahli Kumpulan:</h4>
+            <div class="overflow-x-auto border border-slate-800 rounded-2xl">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-950 border-b border-slate-800 text-slate-400 font-bold">
+                  <tr>
+                    <th class="p-3">Peranan</th>
+                    <th class="p-3">Nama Penuh</th>
+                    <th class="p-3">No. IC</th>
+                    <th class="p-3">Opsyen</th>
+                    <th class="p-3">Mentor</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/80 bg-slate-900/50">
+                  ${allTrainees.map(t => `
+                    <tr>
+                      <td class="p-3 font-bold ${t.role === 'Ketua' ? 'text-ipgBlue-400' : 'text-slate-400'}">${t.role}</td>
+                      <td class="p-3 font-bold text-white">${t.name || '-'}</td>
+                      <td class="p-3 font-mono text-slate-300">${t.ic || '-'}</td>
+                      <td class="p-3 text-slate-300">${t.subject || '-'}</td>
+                      <td class="p-3 text-ipgGold-400 font-medium">${t.mentor || '-'}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Action Buttons: Print Slip & Cancel Submission -->
+          <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <button onclick="reprintCheckedSlip()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-ipgGold-500 hover:bg-ipgGold-600 text-slate-950 font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-print"></i>
+              <span>Lihat & Cetak Slip Penempatan</span>
+            </button>
+
+            <button onclick="openCancelModal()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-rose-950 hover:bg-rose-700 text-rose-200 hover:text-white font-extrabold text-xs border border-rose-700/80 transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-trash-can"></i>
+              <span>Batalkan Penempatan & Pilih Sekolah Lain</span>
+            </button>
+          </div>
+
+        </div>
+      `;
+    });
+
+    window.reprintCheckedSlip = function() {
+      const placement = window.__currentCheckedPlacement;
+      if (!placement) return;
+      renderVoucher(placement);
+      switchPortalView('register');
+      goToStep(4);
+    };
+
+    window.openCancelModal = function() {
+      const placement = window.__currentCheckedPlacement;
+      if (!placement) return;
+      appState.pendingCancelPlacement = placement;
+      document.getElementById('cancelModalSchoolName').innerText = placement.school?.name || 'sekolah ini';
+      document.getElementById('cancelPlacementModal').classList.remove('hidden');
+    };
+
+    window.closeCancelModal = function() {
+      document.getElementById('cancelPlacementModal').classList.add('hidden');
+      appState.pendingCancelPlacement = null;
+    };
+
+    window.executePlacementCancellation = async function() {
+      const placement = appState.pendingCancelPlacement;
+      if (!placement) return;
+
+      const btn = document.getElementById('confirmCancelBtn');
+      btn.disabled = true;
+      btn.innerText = 'Membatalkan...';
+
+      try {
+        const placementRef = doc(db, 'artifacts', appId, 'public', 'data', 'placements', placement.id);
+        const schoolId = placement.school?.id;
+
+        await runTransaction(db, async (transaction) => {
+          if (schoolId) {
+            const schoolRef = doc(db, 'artifacts', appId, 'public', 'data', 'schools', schoolId);
+            const schoolDoc = await transaction.get(schoolRef);
+            if (schoolDoc.exists()) {
+              const currentBooked = schoolDoc.data().bookedGroups || 0;
+              transaction.update(schoolRef, { bookedGroups: Math.max(0, currentBooked - 1) });
+            }
+          }
+          transaction.delete(placementRef);
+        });
+
+        closeCancelModal();
+        window.__currentCheckedPlacement = null;
+        document.getElementById('semakResultContainer').innerHTML = `
+          <div class="bg-emerald-950/60 border border-emerald-700/60 rounded-3xl p-6 sm:p-8 text-center space-y-3 shadow-xl">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center text-xl">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-white">Penempatan Berjaya Dibatalkan</h3>
+            <p class="text-xs text-emerald-200 max-w-md mx-auto">Slot sekolah telah dibuka semula. Anda kini boleh mendaftar semula dan memilih sekolah baharu.</p>
+            <div class="pt-2">
+              <button onclick="resetRegistration(); switchPortalView('register');" class="px-6 py-2.5 rounded-xl bg-ipgBlue-600 hover:bg-ipgBlue-500 text-white font-extrabold text-xs shadow-lg">
+                Pilih Sekolah Baharu Sekarang
+              </button>
+            </div>
+          </div>
+        `;
+        showToast('Penempatan telah dibatalkan. Anda boleh memilih sekolah baharu.', 'success');
+      } catch (err) {
+        console.error("Cancellation Error:", err);
+        showToast('Gagal membatalkan penempatan. Sila cuba lagi.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerText = 'Ya, Batalkan';
+      }
+    };
 
     window.resetRegistration = function() {
       appState.selectedSchool = null;
@@ -996,7 +1426,7 @@ function renderStep() {
         icon.className = 'fa-solid fa-circle-info text-ipgBlue-400 text-lg';
       }
 
-      setTimeout(() => { hideToast(); }, 5000);
+      setTimeout(() => { hideToast(); }, 5500);
     }
 
     window.hideToast = function() {
