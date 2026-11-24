@@ -88,40 +88,42 @@
   </style>
 </head>
 
-<body class="h-full text-slate-100 font-sans antialiased flex flex-col min-h-screen bg-slate-950 bg-[url('Bg.png')] bg-cover bg-center bg-no-repeat bg-fixed">
+<body class="h-full text-slate-100 font-sans antialiased flex flex-col min-h-screen overflow-x-hidden bg-slate-950 bg-[url('Bg.png')] bg-cover bg-center bg-no-repeat bg-fixed">
 
   <!-- ========================================================= -->
   <!-- HEADER BAR                                                -->
   <!-- ========================================================= -->
   <header class="no-print bg-slate-900/40 backdrop-blur-md border-b border-white/10 sticky top-0 z-30 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+    <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-1.5 sm:gap-2">
       
       <!-- Back to Main Portal & Title with Custom Logo & Border -->
-      <div class="flex items-center space-x-3">
-        <a href="landing.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-700/80">
+      <div class="flex items-center gap-1.5 sm:gap-3 min-w-0">
+        <a href="landing.html" class="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-700/80 shrink-0">
           <i class="fa-solid fa-arrow-left"></i>
           <span class="hidden md:inline">Portal Pelajar</span>
         </a>
-        <div class="h-5 w-px bg-slate-700/80 hidden sm:block"></div>
-        <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-white border border-ipgGold-500/60 flex items-center justify-center overflow-hidden shadow-md shrink-0">
+        <div class="h-5 w-px bg-slate-700/80 hidden sm:block shrink-0"></div>
+        <div class="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
+          <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-white border border-ipgGold-500/60 flex items-center justify-center overflow-hidden shadow-md shrink-0">
             <img src="logo3.png" alt="Logo" class="w-full h-full object-contain">
           </div>
-          <h1 class="text-xs sm:text-base font-extrabold text-white tracking-wide uppercase truncate">
-            Sistem Praktikum<span class="text-ipgGold-400"> IPGKBA</span>
+          <h1 class="text-[11px] sm:text-base font-extrabold text-white tracking-tight sm:tracking-wide uppercase truncate">
+            <span class="sm:hidden">Praktikum<span class="text-ipgGold-400"> IPGKBA</span></span>
+            <span class="hidden sm:inline">Sistem Praktikum<span class="text-ipgGold-400"> IPGKBA</span></span>
           </h1>
         </div>
       </div>
 
       <!-- Navigation Switcher: Daftar vs Semak/Batal -->
-      <div class="flex items-center gap-1.5 sm:gap-2">
-        <button id="navBtn-register" onclick="switchPortalView('register')" class="px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-xs font-bold shadow transition-all flex items-center gap-1.5">
+      <div class="flex items-center gap-1 sm:gap-2 shrink-0">
+        <button id="navBtn-register" onclick="switchPortalView('register')" class="px-2 sm:px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-[11px] sm:text-xs font-bold shadow transition-all flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-file-signature"></i>
           <span>Daftar</span>
         </button>
-        <button id="navBtn-semak" onclick="switchPortalView('semak')" class="px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-all flex items-center gap-1.5">
+        <button id="navBtn-semak" onclick="switchPortalView('semak')" class="px-2 sm:px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-[11px] sm:text-xs font-bold border border-slate-700 transition-all flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Semak / Batal</span>
+          <span class="sm:hidden">Semak</span>
+          <span class="hidden sm:inline">Semak / Batal</span>
         </button>
       </div>
 
@@ -160,29 +162,29 @@
 
       <!-- STEP PROGRESS INDICATOR BAR -->
       <div class="no-print mb-8">
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl">
-          <div class="grid grid-cols-4 gap-2 text-center text-xs font-semibold">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-xl">
+          <div class="grid grid-cols-4 gap-1.5 sm:gap-2 text-center text-[11px] sm:text-xs font-semibold">
             
             <!-- Step 1 -->
-            <div id="stepTab-1" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white transition-all">
+            <div id="stepTab-1" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white transition-all">
               <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">1</span>
               <span>Pilih Negeri</span>
             </div>
 
             <!-- Step 2 -->
-            <div id="stepTab-2" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
+            <div id="stepTab-2" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
               <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">2</span>
               <span>Maklumat Kumpulan</span>
             </div>
 
             <!-- Step 3 -->
-            <div id="stepTab-3" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
+            <div id="stepTab-3" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
               <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">3</span>
               <span>Pilih Sekolah</span>
             </div>
 
             <!-- Step 4 -->
-            <div id="stepTab-4" class="flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
+            <div id="stepTab-4" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
               <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">4</span>
               <span>Slip Penempatan</span>
             </div>
@@ -268,12 +270,12 @@
       <!-- STEP 2: GROUP DETAILS FORM                                -->
       <!-- ========================================================= -->
       <section id="stepSection-2" class="hidden space-y-6">
-        <div class="flex items-center justify-between max-w-4xl mx-auto border-b border-slate-800 pb-4">
+        <div class="flex items-center justify-between max-w-4xl mx-auto border-b border-slate-800 pb-4 gap-3">
           <div>
             <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 2: Maklumat Ketua & Ahli Kumpulan</h2>
             <p class="text-xs text-slate-400">Pendaftaran borang hanya perlu diisi oleh <strong class="text-slate-200">Ketua Kumpulan sahaja</strong>.</p>
           </div>
-          <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700">
+          <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 shrink-0">
             <i class="fa-solid fa-rotate-left"></i> Tukar Negeri
           </button>
         </div>
@@ -323,6 +325,20 @@
               <div>
                 <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Mentor <span class="text-rose-500">*</span></label>
                 <input type="text" id="leaderMentor" required placeholder="Cth: PUAN XYZ" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+              </div>
+
+              <!-- JENIS SEKOLAH SELECTION (LEADER ONLY - MEMBERS FOLLOW LEADER) -->
+              <div class="md:col-span-2 bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+                <label class="block text-xs font-bold text-ipgBlue-400">
+                  <i class="fa-solid fa-school mr-1"></i> Jenis Sekolah Pilihan <span class="text-rose-500">*</span>
+                </label>
+                <p class="text-[11px] text-slate-400">Sila pilih aliran jenis sekolah (SK, SJKC atau SJKT). Semua ahli kumpulan akan mengikut pilihan ketua.</p>
+                <select id="leaderSchoolType" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-ipgBlue-500 transition-all">
+                  <option value="">-- Pilih Jenis Sekolah --</option>
+                  <option value="SK">SK (Sekolah Kebangsaan)</option>
+                  <option value="SJKC">SJKC (Sekolah Jenis Kebangsaan Cina)</option>
+                  <option value="SJKT">SJKT (Sekolah Jenis Kebangsaan Tamil)</option>
+                </select>
               </div>
 
               <!-- RESIDENTIAL AREA FOR DISTANCE CALCULATION -->
@@ -484,11 +500,17 @@
             <h4 class="font-black text-slate-900 uppercase tracking-wide text-sm sm:text-base">SLIP PENGESAHAN PENEMPATAN PRAKTIKUM</h4>
           </div>
 
-          <!-- School Placement Info (Strictly School Name, Phone & Email) -->
+          <!-- School Placement Info (School Name, School Type, Phone & Email) -->
           <div class="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 text-xs space-y-3">
-            <div>
-              <span class="text-slate-500 font-semibold block text-[11px] uppercase tracking-wider">Nama Sekolah:</span>
-              <span id="voucherSchoolName" class="font-black text-base text-slate-900 block mt-0.5"></span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="sm:col-span-2">
+                <span class="text-slate-500 font-semibold block text-[11px] uppercase tracking-wider">Nama Sekolah:</span>
+                <span id="voucherSchoolName" class="font-black text-base text-slate-900 block mt-0.5"></span>
+              </div>
+              <div>
+                <span class="text-slate-500 font-semibold block text-[11px] uppercase tracking-wider">Jenis Sekolah:</span>
+                <span id="voucherSchoolType" class="font-black text-sm text-slate-900 block mt-0.5"></span>
+              </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-200">
               <div>
@@ -625,20 +647,50 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    // Initial Default Schools Data (with School Phone & Email)
+    // Helper to infer or normalize school type ('SK', 'SJKC', 'SJKT')
+    function getSchoolType(school) {
+      if (!school) return 'SK';
+      if (school.schoolType) return String(school.schoolType).toUpperCase().replace(/[^A-Z]/g, '');
+      const upperName = String(school.name || '').toUpperCase();
+      if (upperName.startsWith('SJK(C)') || upperName.startsWith('SJKC')) return 'SJKC';
+      if (upperName.startsWith('SJK(T)') || upperName.startsWith('SJKT')) return 'SJKT';
+      return 'SK';
+    }
+
+    function formatSchoolTypeLabel(typeCode) {
+      const code = String(typeCode || '').toUpperCase();
+      if (code === 'SK') return 'SK (Sekolah Kebangsaan)';
+      if (code === 'SJKC') return 'SJKC (Sekolah Jenis Kebangsaan Cina)';
+      if (code === 'SJKT') return 'SJKT (Sekolah Jenis Kebangsaan Tamil)';
+      return code || '-';
+    }
+
+    // Initial Default Schools Data (with School Type, Phone & Email)
     const INITIAL_SCHOOLS = [
-      { id: 'SK-KL-01', name: 'SK Bangsar', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Pantai Baharu, 59200 Kuala Lumpur', phone: '03-2282 1420', email: 'wba0001@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1189, lng: 101.6732, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-KL-02', name: 'SK Taman Melawati', state: 'KL', district: 'PPD Keramat', address: 'Jalan Melawati 5, 53100 Kuala Lumpur', phone: '03-4107 1954', email: 'bba7215@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2104, lng: 101.7495, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-KL-03', name: 'SK Seri Setia', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kuchai Lama, 58200 Kuala Lumpur', phone: '03-7983 1621', email: 'wba0048@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0891, lng: 101.6894, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-KL-04', name: 'SK Sentul Utama', state: 'KL', district: 'PPD Sentul', address: 'Jalan Sentul, 51100 Kuala Lumpur', phone: '03-4041 3288', email: 'wba0062@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1874, lng: 101.6921, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-KL-05', name: 'SK Bandar Tun Razak 1', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sembilang, 56000 Kuala Lumpur', phone: '03-9171 3890', email: 'wba0054@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0934, lng: 101.7210, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-KL-06', name: 'SK Kepong Baru', state: 'KL', district: 'PPD Sentul', address: 'Jalan Api Api, 52100 Kuala Lumpur', phone: '03-6274 1345', email: 'wba0019@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2120, lng: 101.6412, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-SEL-01', name: 'SK Seksyen 7 Shah Alam', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan Tungsten 7/23, 40000 Shah Alam', phone: '03-5510 8912', email: 'bba8264@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0782, lng: 101.4912, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-SEL-02', name: 'SK Subang Jaya', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 14/1, 47500 Subang Jaya', phone: '03-5633 2411', email: 'bba8219@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0645, lng: 101.5891, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-SEL-03', name: 'SK Saujana Impian Kajang', state: 'Selangor', district: 'PPD Hulu Langat', address: 'KM 22 Jalan Cheras, 43000 Kajang', phone: '03-8737 4120', email: 'bba4045@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0084, lng: 101.7892, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-SEL-04', name: 'SK Gombak Setia', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan 9, Gombak Setia, 53100 Kuala Lumpur', phone: '03-6189 4521', email: 'bba7204@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2201, lng: 101.7192, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-SEL-05', name: 'SK Petaling Jaya', state: 'Selangor', district: 'PPD Petaling Utama', address: 'Jalan 1/9, 46000 Petaling Jaya', phone: '03-7782 9104', email: 'bba8202@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0921, lng: 101.6421, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-SEL-06', name: 'SK Bandar Baru Bangi', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan 2/1, 43650 Bandar Baru Bangi', phone: '03-8925 0418', email: 'bba4028@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9641, lng: 101.7753, subjectsNeeded: ['Pendidikan Islam'] }
+      { id: 'SK-KL-01', name: 'SK Bangsar', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Pantai Baharu, 59200 Kuala Lumpur', phone: '03-2282 1420', email: 'wba0001@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1189, lng: 101.6732, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-KL-02', name: 'SK Taman Melawati', schoolType: 'SK', state: 'KL', district: 'PPD Keramat', address: 'Jalan Melawati 5, 53100 Kuala Lumpur', phone: '03-4107 1954', email: 'bba7215@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2104, lng: 101.7495, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-KL-03', name: 'SK Seri Setia', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kuchai Lama, 58200 Kuala Lumpur', phone: '03-7983 1621', email: 'wba0048@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0891, lng: 101.6894, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-KL-04', name: 'SK Sentul Utama', schoolType: 'SK', state: 'KL', district: 'PPD Sentul', address: 'Jalan Sentul, 51100 Kuala Lumpur', phone: '03-4041 3288', email: 'wba0062@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1874, lng: 101.6921, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-KL-05', name: 'SK Bandar Tun Razak 1', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sembilang, 56000 Kuala Lumpur', phone: '03-9171 3890', email: 'wba0054@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0934, lng: 101.7210, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-KL-06', name: 'SK Kepong Baru', schoolType: 'SK', state: 'KL', district: 'PPD Sentul', address: 'Jalan Api Api, 52100 Kuala Lumpur', phone: '03-6274 1345', email: 'wba0019@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2120, lng: 101.6412, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKC-KL-01', name: 'SJK(C) Tsun Jin', schoolType: 'SJKC', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kampung Pandan, 55100 Kuala Lumpur', phone: '03-9285 7421', email: 'wbc0138@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1375, lng: 101.7254, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKC-KL-02', name: 'SJK(C) Chung Kwok', schoolType: 'SJKC', state: 'KL', district: 'PPD Sentul', address: 'Jalan Raja Laut, 50350 Kuala Lumpur', phone: '03-2692 4315', email: 'wbc0114@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1618, lng: 101.6958, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKC-KL-03', name: 'SJK(C) Nan Kai', schoolType: 'SJKC', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sultan, 50000 Kuala Lumpur', phone: '03-2078 1924', email: 'wbc0129@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1422, lng: 101.6975, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKT-KL-01', name: 'SJK(T) Vivekananda', schoolType: 'SJKT', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Rozario, Brickfields, 50470 Kuala Lumpur', phone: '03-2274 1852', email: 'wbd0175@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1312, lng: 101.6865, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKT-KL-02', name: 'SJK(T) Sentul', schoolType: 'SJKT', state: 'KL', district: 'PPD Sentul', address: 'Jalan Strachan, 51100 Kuala Lumpur', phone: '03-4042 3510', email: 'wbd0183@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1815, lng: 101.6902, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKT-KL-03', name: 'SJK(T) Kampung Pandan', schoolType: 'SJKT', state: 'KL', district: 'PPD Keramat', address: 'Jalan Thaver, Kampung Pandan, 55100 Kuala Lumpur', phone: '03-9284 7120', email: 'wbd0179@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1438, lng: 101.7321, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-SEL-01', name: 'SK Seksyen 7 Shah Alam', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan Tungsten 7/23, 40000 Shah Alam', phone: '03-5510 8912', email: 'bba8264@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0782, lng: 101.4912, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-SEL-02', name: 'SK Subang Jaya', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 14/1, 47500 Subang Jaya', phone: '03-5633 2411', email: 'bba8219@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0645, lng: 101.5891, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-SEL-03', name: 'SK Saujana Impian Kajang', schoolType: 'SK', state: 'Selangor', district: 'PPD Hulu Langat', address: 'KM 22 Jalan Cheras, 43000 Kajang', phone: '03-8737 4120', email: 'bba4045@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0084, lng: 101.7892, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-SEL-04', name: 'SK Gombak Setia', schoolType: 'SK', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan 9, Gombak Setia, 53100 Kuala Lumpur', phone: '03-6189 4521', email: 'bba7204@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2201, lng: 101.7192, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-SEL-05', name: 'SK Petaling Jaya', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Utama', address: 'Jalan 1/9, 46000 Petaling Jaya', phone: '03-7782 9104', email: 'bba8202@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0921, lng: 101.6421, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-SEL-06', name: 'SK Bandar Baru Bangi', schoolType: 'SK', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan 2/1, 43650 Bandar Baru Bangi', phone: '03-8925 0418', email: 'bba4028@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9641, lng: 101.7753, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKC-SEL-01', name: 'SJK(C) Lick Hung', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 19/6, 47500 Subang Jaya', phone: '03-5635 1333', email: 'bbc8411@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0764, lng: 101.5842, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKC-SEL-02', name: 'SJK(C) Yu Hua Kajang', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan Low Ti Kok, 43000 Kajang', phone: '03-8736 1014', email: 'bbc4048@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9921, lng: 101.7905, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKC-SEL-03', name: 'SJK(C) Desa Jaya', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Gombak', address: 'Taman Desa Jaya, Kepong, 52100 Selangor', phone: '03-6276 1408', email: 'bbc7401@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2185, lng: 101.6289, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKT-SEL-01', name: 'SJK(T) Ladang Midlands', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Seksyen 7, 40000 Shah Alam', phone: '03-5519 4210', email: 'bbd8458@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0725, lng: 101.4865, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKT-SEL-02', name: 'SJK(T) Kajang', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan Reko, 43000 Kajang', phone: '03-8736 2841', email: 'bbd4055@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9875, lng: 101.7882, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKT-SEL-03', name: 'SJK(T) Batu Caves', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan Batu Caves, 68100 Batu Caves', phone: '03-6189 6520', email: 'bbd7451@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2372, lng: 101.6838, subjectsNeeded: ['Pendidikan Islam'] }
     ];
 
     const LOCATION_COORDS = {
@@ -718,6 +770,7 @@
             return {
               id: d.id,
               ...data,
+              schoolType: getSchoolType(data),
               phone: data.phone || fallback?.phone || '-',
               email: data.email || fallback?.email || '-'
             };
@@ -780,13 +833,13 @@
       if (view === 'register') {
         regContainer.classList.remove('hidden');
         semakContainer.classList.add('hidden');
-        btnReg.className = 'px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-xs font-bold shadow transition-all flex items-center gap-1.5';
-        btnSemak.className = 'px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-all flex items-center gap-1.5';
+        btnReg.className = 'px-2 sm:px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-[11px] sm:text-xs font-bold shadow transition-all flex items-center gap-1 sm:gap-1.5 whitespace-nowrap';
+        btnSemak.className = 'px-2 sm:px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-[11px] sm:text-xs font-bold border border-slate-700 transition-all flex items-center gap-1 sm:gap-1.5 whitespace-nowrap';
       } else {
         semakContainer.classList.remove('hidden');
         regContainer.classList.add('hidden');
-        btnSemak.className = 'px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-xs font-bold shadow transition-all flex items-center gap-1.5';
-        btnReg.className = 'px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-all flex items-center gap-1.5';
+        btnSemak.className = 'px-2 sm:px-3 py-1.5 rounded-xl bg-ipgBlue-600 text-white text-[11px] sm:text-xs font-bold shadow transition-all flex items-center gap-1 sm:gap-1.5 whitespace-nowrap';
+        btnReg.className = 'px-2 sm:px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-[11px] sm:text-xs font-bold border border-slate-700 transition-all flex items-center gap-1 sm:gap-1.5 whitespace-nowrap';
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -805,14 +858,14 @@
 
         if (i === appState.currentStep) {
           sec.classList.remove('hidden');
-          tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white font-bold transition-all shadow-md';
+          tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white font-bold transition-all shadow-md';
         } else {
           sec.classList.add('hidden');
 
           if (i < appState.currentStep) {
-            tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-cyan-950/50 text-cyan-400 font-semibold border border-cyan-800/40 transition-all';
+            tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-cyan-950/50 text-cyan-400 font-semibold border border-cyan-800/40 transition-all';
           } else {
-            tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-2 p-2 rounded-xl bg-slate-900 text-slate-500 font-medium border border-slate-800 transition-all';
+            tab.className = 'flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-900 text-slate-500 font-medium border border-slate-800 transition-all';
           }
         }
       }
@@ -833,7 +886,7 @@
       goToStep(2);
     };
 
-    // Build Member Form Fields (No Opsyen field; includes Mentor field)
+    // Build Member Form Fields (Members follow Leader's Opsyen & Jenis Sekolah)
     function buildMemberFormFields() {
       const container = document.getElementById('membersContainer');
       const note = document.getElementById('memberRequirementNote');
@@ -898,11 +951,18 @@
       }
 
       const leaderSubject = document.getElementById('leaderSubject').value;
+      const leaderSchoolType = document.getElementById('leaderSchoolType').value;
+
+      if (!leaderSchoolType) {
+        showToast('Sila pilih Jenis Sekolah (SK, SJKC atau SJKT).', 'error');
+        return;
+      }
 
       appState.leaderData = {
         name: document.getElementById('leaderName').value.trim(),
         ic: leaderIcRaw,
         subject: leaderSubject,
+        schoolType: leaderSchoolType,
         class: document.getElementById('leaderClass').value.trim(),
         phone: document.getElementById('leaderPhone').value.trim(),
         mentor: document.getElementById('leaderMentor').value.trim(),
@@ -919,11 +979,12 @@
         const mentorVal = document.getElementById(`memberMentor_${i}`)?.value.trim();
 
         if (nameVal && icVal && classVal && mentorVal) {
-          // Inherit leader's opsyen automatically
+          // Members automatically inherit leader's opsyen & schoolType
           appState.membersData.push({
             name: nameVal,
             ic: icVal,
             subject: leaderSubject,
+            schoolType: leaderSchoolType,
             class: classVal,
             mentor: mentorVal
           });
@@ -939,8 +1000,8 @@
         return;
       }
 
-      document.getElementById('activeLeaderAreaBadge').innerText = `${appState.leaderData.area} (${appState.selectedNegeri})`;
-      showToast('Maklumat kumpulan disimpan. Sila pilih sekolah.', 'info');
+      document.getElementById('activeLeaderAreaBadge').innerText = `${appState.leaderData.area} (${appState.selectedNegeri}) • Jenis Sekolah: ${leaderSchoolType}`;
+      showToast(`Maklumat kumpulan disimpan. Memaparkan sekolah jenis ${leaderSchoolType}.`, 'info');
       goToStep(3);
     });
 
@@ -958,7 +1019,13 @@
     function renderSchoolsList() {
       const districtSelect = document.getElementById('districtFilter');
       const leaderSubject = appState.leaderData.subject;
-      let filtered = appState.schools.filter(s => s.state === appState.selectedNegeri && s.subjectsNeeded && s.subjectsNeeded.includes(leaderSubject));
+      const leaderSchoolType = appState.leaderData.schoolType;
+
+      let filtered = appState.schools.filter(s =>
+        s.state === appState.selectedNegeri &&
+        s.subjectsNeeded && s.subjectsNeeded.includes(leaderSubject) &&
+        getSchoolType(s) === leaderSchoolType
+      );
       const districts = [...new Set(filtered.map(s => s.district))];
       
       districtSelect.innerHTML = '<option value="ALL">Semua Daerah / PPD</option>';
@@ -979,8 +1046,13 @@
       const leaderAreaKey = appState.leaderData.area || 'Bangsar';
       const leaderCoords = LOCATION_COORDS[leaderAreaKey] || LOCATION_COORDS['Bangsar'];
       const leaderSubject = appState.leaderData.subject;
+      const leaderSchoolType = appState.leaderData.schoolType;
 
-      let list = appState.schools.filter(s => s.state === appState.selectedNegeri && s.subjectsNeeded && s.subjectsNeeded.includes(leaderSubject));
+      let list = appState.schools.filter(s =>
+        s.state === appState.selectedNegeri &&
+        s.subjectsNeeded && s.subjectsNeeded.includes(leaderSubject) &&
+        getSchoolType(s) === leaderSchoolType
+      );
 
       list.forEach(s => {
         s.calculatedDistance = calculateDistanceKm(leaderCoords.lat, leaderCoords.lng, s.lat, s.lng);
@@ -1013,7 +1085,7 @@
         grid.innerHTML = `
           <div class="col-span-full py-12 text-center bg-slate-900/60 rounded-3xl border border-slate-800 text-slate-400 space-y-2">
             <i class="fa-solid fa-school-circle-xmark text-3xl text-slate-500"></i>
-            <p class="text-sm font-semibold">Tiada sekolah ditemui mengikut tapisan anda.</p>
+            <p class="text-sm font-semibold">Tiada sekolah jenis ${leaderSchoolType || ''} ditemui mengikut tapisan anda.</p>
           </div>
         `;
         return;
@@ -1023,6 +1095,7 @@
         const slotsLeft = Math.max(0, school.maxGroups - school.bookedGroups);
         const isFull = slotsLeft <= 0;
         const isOffline = !appState.isSystemOnline;
+        const sType = getSchoolType(school);
 
         const card = document.createElement('div');
         card.className = `bg-slate-900 border ${isFull ? 'border-rose-900/50 opacity-80' : 'border-slate-800 hover:border-ipgBlue-500'} rounded-3xl p-5 shadow-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden`;
@@ -1047,15 +1120,20 @@
 
         card.innerHTML = `
           <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-full border border-slate-800">
-                <i class="fa-solid fa-building-columns mr-1"></i> ${school.district}
-              </span>
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-[10px] font-extrabold uppercase tracking-wider text-ipgGold-400 bg-ipgGold-500/15 px-2.5 py-1 rounded-full border border-ipgGold-500/30">
+                  ${sType}
+                </span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-full border border-slate-800">
+                  <i class="fa-solid fa-building-columns mr-1"></i> ${school.district}
+                </span>
+              </div>
               ${isFull ? 
-                `<span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 bg-rose-950/80 px-2.5 py-1 rounded-full border border-rose-800/80 flex items-center gap-1">
+                `<span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 bg-rose-950/80 px-2.5 py-1 rounded-full border border-rose-800/80 flex items-center gap-1 shrink-0">
                   <i class="fa-solid fa-lock text-xs"></i> PENUH (LOCK)
                  </span>` :
-                `<span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-800/80 flex items-center gap-1">
+                `<span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-800/80 flex items-center gap-1 shrink-0">
                   <i class="fa-solid fa-check text-xs"></i> BAKI ${slotsLeft} KUOTA
                  </span>`
               }
@@ -1145,6 +1223,7 @@
           const localSchool = appState.schools.find(s => s.id === schoolId);
           const schoolPhone = currentData.phone || localSchool?.phone || '-';
           const schoolEmail = currentData.email || localSchool?.email || '-';
+          const resolvedSchoolType = getSchoolType(currentData) || appState.leaderData.schoolType || 'SK';
 
           transaction.update(schoolRef, { bookedGroups: currentData.bookedGroups + 1 });
 
@@ -1154,9 +1233,11 @@
             date: new Date().toLocaleDateString('ms-MY', { day: '2-digit', month: 'long', year: 'numeric' }),
             timestamp: Date.now(),
             negeri: appState.selectedNegeri,
+            schoolType: resolvedSchoolType,
             school: {
               id: currentData.id,
               name: currentData.name,
+              schoolType: resolvedSchoolType,
               address: currentData.address,
               district: currentData.district,
               phone: schoolPhone,
@@ -1180,9 +1261,12 @@
       }
     };
 
-    // Render Slip strictly with Full Name, IC, Opsyen, School Name, School Contact Number & School Email
+    // Render Slip with Full Name, IC, Opsyen, School Name, School Type, School Phone & School Email
     function renderVoucher(placement) {
+      const resolvedSchoolType = placement.school?.schoolType || placement.schoolType || placement.leader?.schoolType || getSchoolType(placement.school);
+
       document.getElementById('voucherSchoolName').innerText = placement.school?.name || '-';
+      document.getElementById('voucherSchoolType').innerText = formatSchoolTypeLabel(resolvedSchoolType);
       document.getElementById('voucherSchoolPhone').innerText = placement.school?.phone || '-';
       document.getElementById('voucherSchoolEmail').innerText = placement.school?.email || '-';
 
@@ -1245,6 +1329,7 @@
       }
 
       const leaderSubject = matchedPlacement.leader?.subject || '-';
+      const resolvedSchoolType = matchedPlacement.school?.schoolType || matchedPlacement.schoolType || matchedPlacement.leader?.schoolType || getSchoolType(matchedPlacement.school);
       const allTrainees = [
         { role: 'Ketua', ...matchedPlacement.leader, subject: leaderSubject },
         ...(matchedPlacement.members || []).map((m, i) => ({
@@ -1262,9 +1347,14 @@
           
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
             <div>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/90 px-2.5 py-1 rounded-full border border-emerald-700/70">
-                <i class="fa-solid fa-circle-check mr-1"></i> PENEMPATAN DISAHKAN
-              </span>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/90 px-2.5 py-1 rounded-full border border-emerald-700/70">
+                  <i class="fa-solid fa-circle-check mr-1"></i> PENEMPATAN DISAHKAN
+                </span>
+                <span class="text-[10px] font-extrabold uppercase tracking-wider text-ipgGold-400 bg-ipgGold-500/15 px-2.5 py-1 rounded-full border border-ipgGold-500/30">
+                  Jenis Sekolah: ${resolvedSchoolType}
+                </span>
+              </div>
               <h3 class="text-xl font-black text-white mt-2">${matchedPlacement.school?.name || '-'}</h3>
               <p class="text-xs text-slate-400 mt-0.5">Kod Rujukan: <span class="font-mono font-bold text-ipgGold-400">${matchedPlacement.refCode}</span> • Negeri: <span class="text-slate-200 font-semibold">${matchedPlacement.negeri}</span></p>
             </div>
