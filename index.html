@@ -98,7 +98,7 @@
       
       <!-- Back to Main Portal & Title with Custom Logo & Border -->
       <div class="flex items-center gap-1.5 sm:gap-3 min-w-0">
-        <a href="https://fizihadi.github.io/MainPraktikum/" class="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-700/80 shrink-0">
+        <a href="landing.html" class="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors border border-slate-700/80 shrink-0">
           <i class="fa-solid fa-arrow-left"></i>
           <span class="hidden md:inline">Portal Pelajar</span>
         </a>
@@ -165,25 +165,25 @@
         <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-xl">
           <div class="grid grid-cols-4 gap-1.5 sm:gap-2 text-center text-[11px] sm:text-xs font-semibold">
             
-            <!-- Step 1 -->
+            <!-- Step 1: Maklumat Kumpulan -->
             <div id="stepTab-1" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-ipgBlue-600 text-white transition-all">
               <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">1</span>
-              <span>Pilih Negeri</span>
-            </div>
-
-            <!-- Step 2 -->
-            <div id="stepTab-2" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
-              <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">2</span>
               <span>Maklumat Kumpulan</span>
             </div>
 
-            <!-- Step 3 -->
+            <!-- Step 2: Pilih Negeri -->
+            <div id="stepTab-2" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
+              <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">2</span>
+              <span>Pilih Negeri</span>
+            </div>
+
+            <!-- Step 3: Pilih Sekolah -->
             <div id="stepTab-3" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
               <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">3</span>
               <span>Pilih Sekolah</span>
             </div>
 
-            <!-- Step 4 -->
+            <!-- Step 4: Slip Penempatan -->
             <div id="stepTab-4" class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-slate-800 text-slate-400 transition-all">
               <span class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold">4</span>
               <span>Slip Penempatan</span>
@@ -194,90 +194,12 @@
       </div>
 
       <!-- ========================================================= -->
-      <!-- STEP 1: NEGERI SELECTION                                  -->
+      <!-- STEP 1: GROUP DETAILS FORM (LEADER & MEMBERS FIRST)       -->
       <!-- ========================================================= -->
       <section id="stepSection-1" class="space-y-6">
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Langkah 1: Pilih Negeri</h2>
-          <p class="text-xs sm:text-sm text-slate-400">Sila pilih kawasan negeri praktikum anda. Bilangan ahli kumpulan bergantung pada pilihan negeri bagi kemudahan berkongsi kenderaan.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-4">
-          
-          <!-- WILAYAH PERSEKUTUAN KL -->
-          <div id="cardNegeriKL" onclick="selectNegeri('KL')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgBlue-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgBlue-500/10 rounded-full group-hover:bg-ipgBlue-500/20 transition-all"></div>
-            
-            <div class="space-y-4 relative z-10">
-              <div class="w-14 h-14 rounded-2xl bg-ipgBlue-500/20 border border-ipgBlue-500/40 text-ipgBlue-400 flex items-center justify-center text-2xl font-bold">
-                <i class="fa-solid fa-city"></i>
-              </div>
-              
-              <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-ipgBlue-400 bg-ipgBlue-500/10 px-2.5 py-1 rounded-full border border-ipgBlue-500/20">Syarat 2 Orang</span>
-                <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Kuala Lumpur (KL)</h3>
-                <p class="text-xs text-slate-400 mt-1 leading-relaxed">Penempatan sekolah di zon Wilayah Persekutuan Kuala Lumpur. Ahli wajib 2 orang.</p>
-              </div>
-
-              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
-                <div class="flex items-center gap-2 text-emerald-400 font-semibold">
-                  <i class="fa-solid fa-users text-xs"></i> 2 Guru Pelatih per kumpulan.
-                </div>
-                <p class="text-[11px] text-slate-400">Disyorkan bagi yang menetap berhampiran Kuala Lumpur.</p>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-ipgBlue-400">
-              <span>Pilih Kuala Lumpur</span>
-              <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-            </div>
-          </div>
-
-          <!-- SELANGOR -->
-          <div id="cardNegeriSelangor" onclick="selectNegeri('Selangor')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgGold-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgGold-500/10 rounded-full group-hover:bg-ipgGold-500/20 transition-all"></div>
-            
-            <div class="space-y-4 relative z-10">
-              <div class="w-14 h-14 rounded-2xl bg-ipgGold-500/20 border border-ipgGold-500/40 text-ipgGold-400 flex items-center justify-center text-2xl font-bold">
-                <i class="fa-solid fa-map-location-dot"></i>
-              </div>
-              
-              <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-white bg-ipgGold-500/10 px-2.5 py-1 rounded-full border border-ipgGold-500/20">Syarat 3-4 Orang</span>
-                <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Selangor Darul Ehsan</h3>
-                <p class="text-xs text-slate-400 mt-1 leading-relaxed">Sekolah di sekitar kawasan Selangor. Ahli antara 3 hingga 4 orang.</p>
-              </div>
-
-              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
-                <div class="flex items-center gap-2 text-emerald-400 font-semibold">
-                  <i class="fa-solid fa-users text-xs"></i> 3 - 4 Guru Pelatih per kumpulan.
-                </div>
-                <p class="text-[11px] text-slate-400">Digalakkan untuk berkongsi kenderaan.</p>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-white">
-              <span>Pilih Selangor</span>
-              <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- STEP 2: GROUP DETAILS FORM                                -->
-      <!-- ========================================================= -->
-      <section id="stepSection-2" class="hidden space-y-6">
-        <div class="flex items-center justify-between max-w-4xl mx-auto border-b border-slate-800 pb-4 gap-3">
-          <div>
-            <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 2: Maklumat Ketua & Ahli Kumpulan</h2>
-            <p class="text-xs text-slate-400">Pendaftaran borang hanya perlu diisi oleh <strong class="text-slate-200">Ketua Kumpulan sahaja</strong>.</p>
-          </div>
-          <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 shrink-0">
-            <i class="fa-solid fa-rotate-left"></i> Tukar Negeri
-          </button>
+        <div class="max-w-4xl mx-auto border-b border-slate-800 pb-4">
+          <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 1: Maklumat Ketua & Ahli Kumpulan</h2>
+          <p class="text-xs text-slate-400 mt-1">Pendaftaran borang hanya perlu diisi oleh <strong class="text-slate-200">Ketua Kumpulan sahaja</strong>. Bilangan ahli kumpulan akan menentukan senarai sekolah yang layak dipilih.</p>
         </div>
 
         <form id="groupForm" class="max-w-4xl mx-auto space-y-6">
@@ -372,7 +294,7 @@
 
           <!-- DYNAMIC AHLI KUMPULAN SECTION -->
           <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
               <div>
                 <h3 class="text-base font-bold text-white flex items-center gap-2">
                   <i class="fa-solid fa-users"></i> Maklumat Ahli Kumpulan
@@ -380,6 +302,12 @@
                 <p id="memberRequirementNote" class="text-xs text-slate-400 mt-0.5"></p>
                 <p class="text-[11px] text-ipgGold-400 mt-1"><i class="fa-solid fa-circle-info mr-1"></i> Pastikan maklumat ahli anda adalah betul dan lengkap.</p>
               </div>
+
+              <!-- PLAIN ADD AHLI BUTTON (MAX 3 AHLI = 4 TOTAL INCLUDING KETUA) -->
+              <button type="button" id="addMemberBtn" onclick="addMemberSlot()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition-all flex items-center justify-center gap-2 shrink-0 shadow-md">
+                <i class="fa-solid fa-plus text-ipgBlue-400"></i>
+                <span id="addMemberBtnText">Tambah Ahli</span>
+              </button>
             </div>
 
             <!-- Ahli Form Container -->
@@ -390,12 +318,90 @@
 
           <!-- SUBMIT & PROCEED BUTTON -->
           <div class="flex justify-end pt-2">
-            <button type="submit" id="step2SubmitBtn" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-ipgBlue-600 to-ipgBlue-500 hover:from-ipgBlue-500 hover:to-ipgBlue-600 text-white font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2">
-              <span>Seterusnya: Cari & Pilih Sekolah</span>
+            <button type="submit" id="step1SubmitBtn" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-ipgBlue-600 to-ipgBlue-500 hover:from-ipgBlue-500 hover:to-ipgBlue-600 text-white font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2">
+              <span>Seterusnya: Pilih Negeri</span>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </form>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- STEP 2: NEGERI SELECTION                                  -->
+      <!-- ========================================================= -->
+      <section id="stepSection-2" class="hidden space-y-6">
+        <div class="flex items-center justify-between max-w-4xl mx-auto border-b border-slate-800 pb-4 gap-3">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-white">Langkah 2: Pilih Negeri</h2>
+            <p class="text-xs text-slate-400 mt-1">
+              Sila pilih kawasan negeri praktikum bagi kumpulan anda (<span id="selectedGroupSizeSummary" class="text-ipgGold-400 font-bold"></span>).
+            </p>
+          </div>
+          <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 shrink-0">
+            <i class="fa-solid fa-pen"></i> Edit Maklumat Kumpulan
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-4">
+          
+          <!-- WILAYAH PERSEKUTUAN KL -->
+          <div id="cardNegeriKL" onclick="selectNegeri('KL')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgBlue-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgBlue-500/10 rounded-full group-hover:bg-ipgBlue-500/20 transition-all"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-ipgBlue-500/20 border border-ipgBlue-500/40 text-ipgBlue-400 flex items-center justify-center text-2xl font-bold">
+                <i class="fa-solid fa-city"></i>
+              </div>
+              
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-ipgBlue-400 bg-ipgBlue-500/10 px-2.5 py-1 rounded-full border border-ipgBlue-500/20">Zon Wilayah Persekutuan</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Kuala Lumpur (KL)</h3>
+              </div>
+
+              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="flex items-center gap-2 text-emerald-400 font-semibold">
+                  <i class="fa-solid fa-school text-xs"></i> Bilangan Ahli: 2 Orang Maksimum.
+                </div>
+                <p class="text-[11px] text-slate-400">Lokasi berdekatan dengan IPGKBA</p>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-ipgBlue-400">
+              <span>Pilih Kuala Lumpur</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            </div>
+          </div>
+
+          <!-- SELANGOR -->
+          <div id="cardNegeriSelangor" onclick="selectNegeri('Selangor')" class="group cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-ipgGold-500 rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-xl relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-ipgGold-500/10 rounded-full group-hover:bg-ipgGold-500/20 transition-all"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-ipgGold-500/20 border border-ipgGold-500/40 text-ipgGold-400 flex items-center justify-center text-2xl font-bold">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-white bg-ipgGold-500/10 px-2.5 py-1 rounded-full border border-ipgGold-500/20">Zon Negeri Selangor</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Selangor Darul Ehsan</h3>
+              </div>
+
+              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="flex items-center gap-2 text-emerald-400 font-semibold">
+                  <i class="fa-solid fa-school text-xs"></i> Bilangan Ahli: 2 hingga 4 Orang.
+                </div>
+                <p class="text-[11px] text-slate-400">Disyorkan untuk berkongsi kenderaan.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-white">
+              <span>Pilih Selangor</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            </div>
+          </div>
+
+        </div>
       </section>
 
 
@@ -410,7 +416,10 @@
           </div>
           <div class="flex items-center gap-2">
             <button onclick="goToStep(2)" class="text-xs text-slate-400 hover:text-white px-3 py-2 rounded-xl bg-slate-800 border border-slate-700">
-              <i class="fa-solid fa-pen mr-1"></i> Edit Maklumat Kumpulan
+              <i class="fa-solid fa-rotate-left mr-1"></i> Tukar Negeri
+            </button>
+            <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-white px-3 py-2 rounded-xl bg-slate-800 border border-slate-700">
+              <i class="fa-solid fa-pen mr-1"></i> Edit Kumpulan
             </button>
           </div>
         </div>
@@ -431,15 +440,15 @@
             </select>
 
             <select id="availabilityFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
-              <option value="ALL">Semua Status Kuota</option>
-              <option value="AVAILABLE">Ada Kekosongan</option>
+              <option value="ALL">Semua Status Sekolah</option>
+              <option value="AVAILABLE">Masih Dibuka</option>
               <option value="FULL">Penuh / Lock</option>
             </select>
 
             <select id="sortFilter" onchange="filterSchools()" class="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
               <option value="DISTANCE">Susun: Terdekat Dahulu</option>
               <option value="NAME">Susun: Abjad Nama</option>
-              <option value="SLOTS">Susun: Kuota Terbanyak</option>
+              <option value="TRAINEES">Susun: Bil. Guru Pelatih Terbanyak</option>
             </select>
           </div>
         </div>
@@ -657,6 +666,18 @@
       return 'SK';
     }
 
+    // Helper to resolve allowed number of guru pelatih per school (2, 3, or 4)
+    function getAllowedTrainees(school) {
+      if (!school) return 3;
+      if (typeof school.maxTrainees === 'number' && school.maxTrainees >= 2) {
+        return school.maxTrainees;
+      }
+      if (typeof school.maxGroups === 'number' && school.maxGroups >= 2 && school.maxGroups <= 4) {
+        return school.maxGroups;
+      }
+      return school.state === 'KL' ? 2 : 4;
+    }
+
     function formatSchoolTypeLabel(typeCode) {
       const code = String(typeCode || '').toUpperCase();
       if (code === 'SK') return 'SK (Sekolah Kebangsaan)';
@@ -665,32 +686,32 @@
       return code || '-';
     }
 
-    // Initial Default Schools Data (with School Type, Phone & Email)
+    // Initial Default Schools Data (maxTrainees: 2, 3, or 4 pupils allowed per school)
     const INITIAL_SCHOOLS = [
-      { id: 'SK-KL-01', name: 'SK Bangsar', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Pantai Baharu, 59200 Kuala Lumpur', phone: '03-2282 1420', email: 'wba0001@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1189, lng: 101.6732, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-KL-02', name: 'SK Taman Melawati', schoolType: 'SK', state: 'KL', district: 'PPD Keramat', address: 'Jalan Melawati 5, 53100 Kuala Lumpur', phone: '03-4107 1954', email: 'bba7215@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2104, lng: 101.7495, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-KL-03', name: 'SK Seri Setia', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kuchai Lama, 58200 Kuala Lumpur', phone: '03-7983 1621', email: 'wba0048@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0891, lng: 101.6894, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-KL-04', name: 'SK Sentul Utama', schoolType: 'SK', state: 'KL', district: 'PPD Sentul', address: 'Jalan Sentul, 51100 Kuala Lumpur', phone: '03-4041 3288', email: 'wba0062@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1874, lng: 101.6921, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-KL-05', name: 'SK Bandar Tun Razak 1', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sembilang, 56000 Kuala Lumpur', phone: '03-9171 3890', email: 'wba0054@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0934, lng: 101.7210, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-KL-06', name: 'SK Kepong Baru', schoolType: 'SK', state: 'KL', district: 'PPD Sentul', address: 'Jalan Api Api, 52100 Kuala Lumpur', phone: '03-6274 1345', email: 'wba0019@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2120, lng: 101.6412, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SJKC-KL-01', name: 'SJK(C) Tsun Jin', schoolType: 'SJKC', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kampung Pandan, 55100 Kuala Lumpur', phone: '03-9285 7421', email: 'wbc0138@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1375, lng: 101.7254, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SJKC-KL-02', name: 'SJK(C) Chung Kwok', schoolType: 'SJKC', state: 'KL', district: 'PPD Sentul', address: 'Jalan Raja Laut, 50350 Kuala Lumpur', phone: '03-2692 4315', email: 'wbc0114@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1618, lng: 101.6958, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SJKC-KL-03', name: 'SJK(C) Nan Kai', schoolType: 'SJKC', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sultan, 50000 Kuala Lumpur', phone: '03-2078 1924', email: 'wbc0129@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1422, lng: 101.6975, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SJKT-KL-01', name: 'SJK(T) Vivekananda', schoolType: 'SJKT', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Rozario, Brickfields, 50470 Kuala Lumpur', phone: '03-2274 1852', email: 'wbd0175@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1312, lng: 101.6865, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SJKT-KL-02', name: 'SJK(T) Sentul', schoolType: 'SJKT', state: 'KL', district: 'PPD Sentul', address: 'Jalan Strachan, 51100 Kuala Lumpur', phone: '03-4042 3510', email: 'wbd0183@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1815, lng: 101.6902, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SJKT-KL-03', name: 'SJK(T) Kampung Pandan', schoolType: 'SJKT', state: 'KL', district: 'PPD Keramat', address: 'Jalan Thaver, Kampung Pandan, 55100 Kuala Lumpur', phone: '03-9284 7120', email: 'wbd0179@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.1438, lng: 101.7321, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-SEL-01', name: 'SK Seksyen 7 Shah Alam', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan Tungsten 7/23, 40000 Shah Alam', phone: '03-5510 8912', email: 'bba8264@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0782, lng: 101.4912, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-SEL-02', name: 'SK Subang Jaya', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 14/1, 47500 Subang Jaya', phone: '03-5633 2411', email: 'bba8219@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0645, lng: 101.5891, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-SEL-03', name: 'SK Saujana Impian Kajang', schoolType: 'SK', state: 'Selangor', district: 'PPD Hulu Langat', address: 'KM 22 Jalan Cheras, 43000 Kajang', phone: '03-8737 4120', email: 'bba4045@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0084, lng: 101.7892, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SK-SEL-04', name: 'SK Gombak Setia', schoolType: 'SK', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan 9, Gombak Setia, 53100 Kuala Lumpur', phone: '03-6189 4521', email: 'bba7204@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2201, lng: 101.7192, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SK-SEL-05', name: 'SK Petaling Jaya', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Utama', address: 'Jalan 1/9, 46000 Petaling Jaya', phone: '03-7782 9104', email: 'bba8202@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0921, lng: 101.6421, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SK-SEL-06', name: 'SK Bandar Baru Bangi', schoolType: 'SK', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan 2/1, 43650 Bandar Baru Bangi', phone: '03-8925 0418', email: 'bba4028@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9641, lng: 101.7753, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SJKC-SEL-01', name: 'SJK(C) Lick Hung', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 19/6, 47500 Subang Jaya', phone: '03-5635 1333', email: 'bbc8411@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0764, lng: 101.5842, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SJKC-SEL-02', name: 'SJK(C) Yu Hua Kajang', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan Low Ti Kok, 43000 Kajang', phone: '03-8736 1014', email: 'bbc4048@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9921, lng: 101.7905, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SJKC-SEL-03', name: 'SJK(C) Desa Jaya', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Gombak', address: 'Taman Desa Jaya, Kepong, 52100 Selangor', phone: '03-6276 1408', email: 'bbc7401@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2185, lng: 101.6289, subjectsNeeded: ['Pendidikan Islam'] },
-      { id: 'SJKT-SEL-01', name: 'SJK(T) Ladang Midlands', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Seksyen 7, 40000 Shah Alam', phone: '03-5519 4210', email: 'bbd8458@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.0725, lng: 101.4865, subjectsNeeded: ['Bahasa Melayu'] },
-      { id: 'SJKT-SEL-02', name: 'SJK(T) Kajang', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan Reko, 43000 Kajang', phone: '03-8736 2841', email: 'bbd4055@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 2.9875, lng: 101.7882, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
-      { id: 'SJKT-SEL-03', name: 'SJK(T) Batu Caves', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan Batu Caves, 68100 Batu Caves', phone: '03-6189 6520', email: 'bbd7451@moe.edu.my', maxGroups: 1, bookedGroups: 0, lat: 3.2372, lng: 101.6838, subjectsNeeded: ['Pendidikan Islam'] }
+      { id: 'SK-KL-01', name: 'SK Bangsar', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Pantai Baharu, 59200 Kuala Lumpur', phone: '03-2282 1420', email: 'wba0001@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.1189, lng: 101.6732, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-KL-02', name: 'SK Taman Melawati', schoolType: 'SK', state: 'KL', district: 'PPD Keramat', address: 'Jalan Melawati 5, 53100 Kuala Lumpur', phone: '03-4107 1954', email: 'bba7215@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 3.2104, lng: 101.7495, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-KL-03', name: 'SK Seri Setia', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kuchai Lama, 58200 Kuala Lumpur', phone: '03-7983 1621', email: 'wba0048@moe.edu.my', maxGroups: 1, maxTrainees: 4, bookedGroups: 0, lat: 3.0891, lng: 101.6894, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-KL-04', name: 'SK Sentul Utama', schoolType: 'SK', state: 'KL', district: 'PPD Sentul', address: 'Jalan Sentul, 51100 Kuala Lumpur', phone: '03-4041 3288', email: 'wba0062@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.1874, lng: 101.6921, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-KL-05', name: 'SK Bandar Tun Razak 1', schoolType: 'SK', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sembilang, 56000 Kuala Lumpur', phone: '03-9171 3890', email: 'wba0054@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 3.0934, lng: 101.7210, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-KL-06', name: 'SK Kepong Baru', schoolType: 'SK', state: 'KL', district: 'PPD Sentul', address: 'Jalan Api Api, 52100 Kuala Lumpur', phone: '03-6274 1345', email: 'wba0019@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.2120, lng: 101.6412, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKC-KL-01', name: 'SJK(C) Tsun Jin', schoolType: 'SJKC', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Kampung Pandan, 55100 Kuala Lumpur', phone: '03-9285 7421', email: 'wbc0138@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.1375, lng: 101.7254, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKC-KL-02', name: 'SJK(C) Chung Kwok', schoolType: 'SJKC', state: 'KL', district: 'PPD Sentul', address: 'Jalan Raja Laut, 50350 Kuala Lumpur', phone: '03-2692 4315', email: 'wbc0114@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 3.1618, lng: 101.6958, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKC-KL-03', name: 'SJK(C) Nan Kai', schoolType: 'SJKC', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Sultan, 50000 Kuala Lumpur', phone: '03-2078 1924', email: 'wbc0129@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.1422, lng: 101.6975, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKT-KL-01', name: 'SJK(T) Vivekananda', schoolType: 'SJKT', state: 'KL', district: 'PPD Bangsar / Pudu', address: 'Jalan Rozario, Brickfields, 50470 Kuala Lumpur', phone: '03-2274 1852', email: 'wbd0175@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.1312, lng: 101.6865, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKT-KL-02', name: 'SJK(T) Sentul', schoolType: 'SJKT', state: 'KL', district: 'PPD Sentul', address: 'Jalan Strachan, 51100 Kuala Lumpur', phone: '03-4042 3510', email: 'wbd0183@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 3.1815, lng: 101.6902, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKT-KL-03', name: 'SJK(T) Kampung Pandan', schoolType: 'SJKT', state: 'KL', district: 'PPD Keramat', address: 'Jalan Thaver, Kampung Pandan, 55100 Kuala Lumpur', phone: '03-9284 7120', email: 'wbd0179@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.1438, lng: 101.7321, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-SEL-01', name: 'SK Seksyen 7 Shah Alam', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan Tungsten 7/23, 40000 Shah Alam', phone: '03-5510 8912', email: 'bba8264@moe.edu.my', maxGroups: 1, maxTrainees: 4, bookedGroups: 0, lat: 3.0782, lng: 101.4912, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-SEL-02', name: 'SK Subang Jaya', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 14/1, 47500 Subang Jaya', phone: '03-5633 2411', email: 'bba8219@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 3.0645, lng: 101.5891, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-SEL-03', name: 'SK Saujana Impian Kajang', schoolType: 'SK', state: 'Selangor', district: 'PPD Hulu Langat', address: 'KM 22 Jalan Cheras, 43000 Kajang', phone: '03-8737 4120', email: 'bba4045@moe.edu.my', maxGroups: 1, maxTrainees: 4, bookedGroups: 0, lat: 3.0084, lng: 101.7892, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SK-SEL-04', name: 'SK Gombak Setia', schoolType: 'SK', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan 9, Gombak Setia, 53100 Kuala Lumpur', phone: '03-6189 4521', email: 'bba7204@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.2201, lng: 101.7192, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SK-SEL-05', name: 'SK Petaling Jaya', schoolType: 'SK', state: 'Selangor', district: 'PPD Petaling Utama', address: 'Jalan 1/9, 46000 Petaling Jaya', phone: '03-7782 9104', email: 'bba8202@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 3.0921, lng: 101.6421, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SK-SEL-06', name: 'SK Bandar Baru Bangi', schoolType: 'SK', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan 2/1, 43650 Bandar Baru Bangi', phone: '03-8925 0418', email: 'bba4028@moe.edu.my', maxGroups: 1, maxTrainees: 4, bookedGroups: 0, lat: 2.9641, lng: 101.7753, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKC-SEL-01', name: 'SJK(C) Lick Hung', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Jalan SS 19/6, 47500 Subang Jaya', phone: '03-5635 1333', email: 'bbc8411@moe.edu.my', maxGroups: 1, maxTrainees: 4, bookedGroups: 0, lat: 3.0764, lng: 101.5842, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKC-SEL-02', name: 'SJK(C) Yu Hua Kajang', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan Low Ti Kok, 43000 Kajang', phone: '03-8736 1014', email: 'bbc4048@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 2.9921, lng: 101.7905, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKC-SEL-03', name: 'SJK(C) Desa Jaya', schoolType: 'SJKC', state: 'Selangor', district: 'PPD Gombak', address: 'Taman Desa Jaya, Kepong, 52100 Selangor', phone: '03-6276 1408', email: 'bbc7401@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.2185, lng: 101.6289, subjectsNeeded: ['Pendidikan Islam'] },
+      { id: 'SJKT-SEL-01', name: 'SJK(T) Ladang Midlands', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Petaling Perdana', address: 'Seksyen 7, 40000 Shah Alam', phone: '03-5519 4210', email: 'bbd8458@moe.edu.my', maxGroups: 1, maxTrainees: 3, bookedGroups: 0, lat: 3.0725, lng: 101.4865, subjectsNeeded: ['Bahasa Melayu'] },
+      { id: 'SJKT-SEL-02', name: 'SJK(T) Kajang', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Hulu Langat', address: 'Jalan Reko, 43000 Kajang', phone: '03-8736 2841', email: 'bbd4055@moe.edu.my', maxGroups: 1, maxTrainees: 4, bookedGroups: 0, lat: 2.9875, lng: 101.7882, subjectsNeeded: ['Bahasa Inggeris (TESL)'] },
+      { id: 'SJKT-SEL-03', name: 'SJK(T) Batu Caves', schoolType: 'SJKT', state: 'Selangor', district: 'PPD Gombak', address: 'Jalan Batu Caves, 68100 Batu Caves', phone: '03-6189 6520', email: 'bbd7451@moe.edu.my', maxGroups: 1, maxTrainees: 2, bookedGroups: 0, lat: 3.2372, lng: 101.6838, subjectsNeeded: ['Pendidikan Islam'] }
     ];
 
     const LOCATION_COORDS = {
@@ -708,9 +729,12 @@
       'Puchong': { lat: 3.0336, lng: 101.6186 }
     };
 
+    const MAX_ADDITIONAL_MEMBERS = 3; // Maximum 3 ahli (total 4 including ketua)
+
     let appState = {
       activeView: 'register', // 'register' | 'semak'
       currentStep: 1,
+      memberCount: 1, // Starts at 1 additional member (total 2 including ketua), up to 3 (total 4)
       selectedNegeri: null,
       leaderData: {},
       membersData: [],
@@ -723,6 +747,7 @@
 
     // Global setup & Firebase Auth Initialization
     window.addEventListener('DOMContentLoaded', async () => {
+      buildMemberFormFields();
       try {
         if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
           await signInWithCustomToken(auth, __initial_auth_token);
@@ -771,6 +796,7 @@
               id: d.id,
               ...data,
               schoolType: getSchoolType(data),
+              maxTrainees: getAllowedTrainees(data),
               phone: data.phone || fallback?.phone || '-',
               email: data.email || fallback?.email || '-'
             };
@@ -797,23 +823,23 @@
       const banner = document.getElementById('systemOfflineBanner');
       const cardKL = document.getElementById('cardNegeriKL');
       const cardSel = document.getElementById('cardNegeriSelangor');
-      const step2Btn = document.getElementById('step2SubmitBtn');
+      const step1Btn = document.getElementById('step1SubmitBtn');
 
       if (!appState.isSystemOnline) {
         banner.classList.remove('hidden');
         cardKL.classList.add('opacity-50', 'cursor-not-allowed');
         cardSel.classList.add('opacity-50', 'cursor-not-allowed');
-        if (step2Btn) {
-          step2Btn.disabled = true;
-          step2Btn.classList.add('opacity-50', 'cursor-not-allowed');
+        if (step1Btn) {
+          step1Btn.disabled = true;
+          step1Btn.classList.add('opacity-50', 'cursor-not-allowed');
         }
       } else {
         banner.classList.add('hidden');
         cardKL.classList.remove('opacity-50', 'cursor-not-allowed');
         cardSel.classList.remove('opacity-50', 'cursor-not-allowed');
-        if (step2Btn) {
-          step2Btn.disabled = false;
-          step2Btn.classList.remove('opacity-50', 'cursor-not-allowed');
+        if (step1Btn) {
+          step1Btn.disabled = false;
+          step1Btn.classList.remove('opacity-50', 'cursor-not-allowed');
         }
       }
 
@@ -870,57 +896,122 @@
         }
       }
 
+      if (appState.currentStep === 2) {
+        const totalTrainees = 1 + appState.membersData.length;
+        const eligibleText = totalTrainees === 2
+          ? 'Sekolah kapasiti 2 guru pelatih'
+          : 'Sekolah kapasiti 3 atau 4 guru pelatih';
+        document.getElementById('selectedGroupSizeSummary').innerText = `${totalTrainees} Guru Pelatih • Layak: ${eligibleText}`;
+      }
+
       if (appState.currentStep === 3) {
         renderSchoolsList();
       }
     }
 
-    window.selectNegeri = function(negeri) {
-      if (!appState.isSystemOnline) {
-        showToast('Sistem tidak dalam talian (Offline). Tiada penghantaran baharu diterima.', 'error');
+    // Add Ahli button handler (up to 3 additional members = 4 total including ketua)
+    window.addMemberSlot = function() {
+      if (appState.memberCount >= MAX_ADDITIONAL_MEMBERS) {
+        showToast('Maksimum 3 orang ahli sahaja dibenarkan (jumlah 4 orang termasuk ketua).', 'info');
         return;
       }
-      appState.selectedNegeri = negeri;
-      showToast(`Negeri ${negeri} dipilih. Sila isi maklumat ahli kumpulan.`, 'info');
+      appState.memberCount += 1;
       buildMemberFormFields();
-      goToStep(2);
     };
 
-    // Build Member Form Fields (Members follow Leader's Opsyen & Jenis Sekolah)
-    function buildMemberFormFields() {
-      const container = document.getElementById('membersContainer');
-      const note = document.getElementById('memberRequirementNote');
-      container.innerHTML = '';
+    // Remove Ahli button handler (shifts remaining inputs up cleanly)
+    window.removeMemberSlot = function(slotIndex) {
+      if (appState.memberCount <= 1) return;
 
-      if (appState.selectedNegeri === 'KL') {
-        note.innerHTML = '<span class="text-ipgBlue-400 font-bold">* KL Memerlukan Tepat 2 Orang Guru Pelatih</span>.';
-      } else {
-        note.innerHTML = '<span class="text-ipgBlue-400 font-bold">* Selangor Memerlukan 3 hingga 4 Orang Guru Pelatih</span>.';
+      const remaining = [];
+      for (let i = 1; i <= appState.memberCount; i++) {
+        if (i === slotIndex) continue;
+        remaining.push({
+          name: document.getElementById(`memberName_${i}`)?.value || '',
+          ic: document.getElementById(`memberIc_${i}`)?.value || '',
+          class: document.getElementById(`memberClass_${i}`)?.value || '',
+          mentor: document.getElementById(`memberMentor_${i}`)?.value || ''
+        });
       }
 
-      const memberCount = (appState.selectedNegeri === 'KL' ? 1 : 3);
+      appState.memberCount -= 1;
+      buildMemberFormFields(remaining);
+    };
+
+    // Build Member Form Fields dynamically based on appState.memberCount (1 to 3)
+    function buildMemberFormFields(presetValues = null) {
+      const container = document.getElementById('membersContainer');
+      const note = document.getElementById('memberRequirementNote');
+      const addBtn = document.getElementById('addMemberBtn');
+      const addBtnText = document.getElementById('addMemberBtnText');
+
+      const memberCount = appState.memberCount;
+      const totalTrainees = 1 + memberCount;
+
+      // Preserve typed values if not explicitly passed
+      const savedValues = [];
+      if (presetValues) {
+        presetValues.forEach((item, idx) => { savedValues[idx + 1] = item; });
+      } else {
+        for (let i = 1; i <= MAX_ADDITIONAL_MEMBERS; i++) {
+          savedValues[i] = {
+            name: document.getElementById(`memberName_${i}`)?.value || '',
+            ic: document.getElementById(`memberIc_${i}`)?.value || '',
+            class: document.getElementById(`memberClass_${i}`)?.value || '',
+            mentor: document.getElementById(`memberMentor_${i}`)?.value || ''
+          };
+        }
+      }
+
+      if (totalTrainees === 2) {
+        note.innerHTML = '<span class="text-ipgBlue-400 font-bold">* Jumlah ahli Kumpulan: 2 Guru Pelatih. </span> Sistem akan memaparkan pilihan sekolah untuk <strong>2 guru pelatih</strong>.';
+      } else {
+        note.innerHTML = `<span class="text-ipgGold-400 font-bold">* Jumlah ahli Kumpulan: ${totalTrainees} Guru Pelatih. </span> Sistem akan memaparkan pilihan sekolah untuk <strong>3 atau 4 guru pelatih</strong>.`;
+      }
+
+      // Update Add Ahli button state
+      if (memberCount >= MAX_ADDITIONAL_MEMBERS) {
+        addBtn.disabled = true;
+        addBtn.className = 'px-4 py-2.5 rounded-xl bg-slate-950 text-slate-500 font-bold text-xs border border-slate-800 cursor-not-allowed flex items-center justify-center gap-2 shrink-0';
+        addBtnText.innerText = 'Maksimum 3 Ahli';
+      } else {
+        addBtn.disabled = false;
+        addBtn.className = 'px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition-all flex items-center justify-center gap-2 shrink-0 shadow-md';
+        addBtnText.innerText = 'Tambah Ahli';
+      }
+
+      container.innerHTML = '';
+
       for (let i = 1; i <= memberCount; i++) {
-        const isOptional = (appState.selectedNegeri === 'Selangor' && i === 3);
-        
+        const prev = savedValues[i] || { name: '', ic: '', class: '', mentor: '' };
+        const canRemove = i > 1; // Member 1 is mandatory minimum; Member 2 & 3 can be removed
+
         const memberCard = document.createElement('div');
         memberCard.className = 'bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3';
         memberCard.innerHTML = `
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-white">Ahli Kumpulan ${i} ${isOptional ? '<span class="text-slate-400 font-normal">(Pilihan / Tidak Wajib)</span>' : '<span class="text-rose-500">*</span>'}</span>
-            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full">Ahli ${i}</span>
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-bold text-white">Ahli Kumpulan ${i} <span class="text-rose-500">*</span></span>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full">Ahli ${i}</span>
+              ${canRemove ? `
+                <button type="button" onclick="removeMemberSlot(${i})" class="text-[10px] bg-rose-950/90 hover:bg-rose-700 text-rose-300 hover:text-white px-2 py-0.5 rounded-full border border-rose-800/70 transition-colors flex items-center gap-1">
+                  <i class="fa-solid fa-xmark"></i> Buang
+                </button>
+              ` : ''}
+            </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div>
-              <input type="text" id="memberName_${i}" ${!isOptional ? 'required' : ''} placeholder="Nama Penuh Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
+              <input type="text" id="memberName_${i}" required value="${prev.name.replace(/"/g, '&quot;')}" placeholder="Nama Penuh Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
             </div>
             <div>
-              <input type="text" id="memberIc_${i}" ${!isOptional ? 'required' : ''} placeholder="No. IC Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
+              <input type="text" id="memberIc_${i}" required value="${prev.ic.replace(/"/g, '&quot;')}" placeholder="No. IC Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
             </div>
             <div>
-              <input type="text" id="memberClass_${i}" ${!isOptional ? 'required' : ''} placeholder="Kelas (Cth: TESL B 2023)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
+              <input type="text" id="memberClass_${i}" required value="${prev.class.replace(/"/g, '&quot;')}" placeholder="Kelas (Cth: TESL B 2023)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
             </div>
             <div>
-              <input type="text" id="memberMentor_${i}" ${!isOptional ? 'required' : ''} placeholder="Nama Mentor Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
+              <input type="text" id="memberMentor_${i}" required value="${prev.mentor.replace(/"/g, '&quot;')}" placeholder="Nama Mentor Ahli ${i}" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ipgGold-500">
             </div>
           </div>
         `;
@@ -932,6 +1023,7 @@
       return String(icStr || '').replace(/[^0-9a-zA-Z]/g, '').toUpperCase();
     }
 
+    // Step 1 Submit -> Validate Group & Proceed to Step 2 (Pilih Negeri)
     document.getElementById('groupForm').addEventListener('submit', (event) => {
       event.preventDefault();
 
@@ -970,40 +1062,47 @@
       };
 
       appState.membersData = [];
-      const totalPossibleMembers = (appState.selectedNegeri === 'KL' ? 1 : 3);
+      const requiredMembers = appState.memberCount;
 
-      for (let i = 1; i <= totalPossibleMembers; i++) {
+      for (let i = 1; i <= requiredMembers; i++) {
         const nameVal = document.getElementById(`memberName_${i}`)?.value.trim();
         const icVal = document.getElementById(`memberIc_${i}`)?.value.trim();
         const classVal = document.getElementById(`memberClass_${i}`)?.value.trim();
         const mentorVal = document.getElementById(`memberMentor_${i}`)?.value.trim();
 
-        if (nameVal && icVal && classVal && mentorVal) {
-          // Members automatically inherit leader's opsyen & schoolType
-          appState.membersData.push({
-            name: nameVal,
-            ic: icVal,
-            subject: leaderSubject,
-            schoolType: leaderSchoolType,
-            class: classVal,
-            mentor: mentorVal
-          });
-        } else if (nameVal || icVal || classVal || mentorVal) {
+        if (!nameVal || !icVal || !classVal || !mentorVal) {
           showToast(`Sila lengkapkan semua butiran bagi Ahli Kumpulan ${i} (Nama, No. IC, Kelas & Nama Mentor)!`, 'error');
           return;
         }
+
+        // Members automatically inherit leader's opsyen & schoolType
+        appState.membersData.push({
+          name: nameVal,
+          ic: icVal,
+          subject: leaderSubject,
+          schoolType: leaderSchoolType,
+          class: classVal,
+          mentor: mentorVal
+        });
       }
 
-      const minRequiredMembers = (appState.selectedNegeri === 'KL') ? 1 : 2;
-      if (appState.membersData.length < minRequiredMembers) {
-        showToast(`Sila lengkapkan sekurang-kurangnya ${minRequiredMembers} orang ahli kumpulan!`, 'error');
+      const totalTrainees = 1 + appState.membersData.length;
+      showToast(`Maklumat kumpulan (${totalTrainees} guru pelatih) disimpan. Sila pilih negeri.`, 'info');
+      goToStep(2);
+    });
+
+    // Step 2 -> Select Negeri & Proceed to Step 3 (Pilih Sekolah)
+    window.selectNegeri = function(negeri) {
+      if (!appState.isSystemOnline) {
+        showToast('Sistem tidak dalam talian (Offline). Tiada penghantaran baharu diterima.', 'error');
         return;
       }
-
-      document.getElementById('activeLeaderAreaBadge').innerText = `${appState.leaderData.area} (${appState.selectedNegeri}) • Jenis Sekolah: ${leaderSchoolType}`;
-      showToast(`Maklumat kumpulan disimpan. Memaparkan sekolah jenis ${leaderSchoolType}.`, 'info');
+      appState.selectedNegeri = negeri;
+      const totalTrainees = 1 + appState.membersData.length;
+      document.getElementById('activeLeaderAreaBadge').innerText = `${appState.leaderData.area} (${appState.selectedNegeri}) • Jenis Sekolah: ${appState.leaderData.schoolType} • ${totalTrainees} Guru Pelatih`;
+      showToast(`Negeri ${negeri} dipilih. Memaparkan senarai sekolah yang layak.`, 'info');
       goToStep(3);
-    });
+    };
 
     function calculateDistanceKm(lat1, lon1, lat2, lon2) {
       const R = 6371;
@@ -1016,6 +1115,22 @@
       return (R * c * 1.25).toFixed(1);
     }
 
+    // Helper: Check if a school matches the student group's size rules
+    // - If 2 trainees total (1 leader + 1 member): only schools allowing 2 trainees
+    // - If 3 or 4 trainees total (1 leader + 2 or 3 members): schools allowing 3 or 4 trainees
+    function matchesGroupTraineeRule(school) {
+      const totalTrainees = 1 + appState.membersData.length;
+      const allowedTrainees = getAllowedTrainees(school);
+
+      if (totalTrainees === 2) {
+        return allowedTrainees === 2;
+      }
+      if (totalTrainees >= 3) {
+        return allowedTrainees === 3 || allowedTrainees === 4;
+      }
+      return true;
+    }
+
     function renderSchoolsList() {
       const districtSelect = document.getElementById('districtFilter');
       const leaderSubject = appState.leaderData.subject;
@@ -1024,7 +1139,8 @@
       let filtered = appState.schools.filter(s =>
         s.state === appState.selectedNegeri &&
         s.subjectsNeeded && s.subjectsNeeded.includes(leaderSubject) &&
-        getSchoolType(s) === leaderSchoolType
+        getSchoolType(s) === leaderSchoolType &&
+        matchesGroupTraineeRule(s)
       );
       const districts = [...new Set(filtered.map(s => s.district))];
       
@@ -1047,11 +1163,13 @@
       const leaderCoords = LOCATION_COORDS[leaderAreaKey] || LOCATION_COORDS['Bangsar'];
       const leaderSubject = appState.leaderData.subject;
       const leaderSchoolType = appState.leaderData.schoolType;
+      const totalTrainees = 1 + appState.membersData.length;
 
       let list = appState.schools.filter(s =>
         s.state === appState.selectedNegeri &&
         s.subjectsNeeded && s.subjectsNeeded.includes(leaderSubject) &&
-        getSchoolType(s) === leaderSchoolType
+        getSchoolType(s) === leaderSchoolType &&
+        matchesGroupTraineeRule(s)
       );
 
       list.forEach(s => {
@@ -1075,8 +1193,8 @@
         list.sort((a, b) => parseFloat(a.calculatedDistance) - parseFloat(b.calculatedDistance));
       } else if (sortVal === 'NAME') {
         list.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (sortVal === 'SLOTS') {
-        list.sort((a, b) => (b.maxGroups - b.bookedGroups) - (a.maxGroups - a.bookedGroups));
+      } else if (sortVal === 'TRAINEES') {
+        list.sort((a, b) => getAllowedTrainees(b) - getAllowedTrainees(a));
       }
 
       grid.innerHTML = '';
@@ -1085,17 +1203,18 @@
         grid.innerHTML = `
           <div class="col-span-full py-12 text-center bg-slate-900/60 rounded-3xl border border-slate-800 text-slate-400 space-y-2">
             <i class="fa-solid fa-school-circle-xmark text-3xl text-slate-500"></i>
-            <p class="text-sm font-semibold">Tiada sekolah jenis ${leaderSchoolType || ''} ditemui mengikut tapisan anda.</p>
+            <p class="text-sm font-semibold">Tiada sekolah jenis ${leaderSchoolType || ''} (${totalTrainees === 2 ? '2 guru pelatih' : '3-4 guru pelatih'}) ditemui mengikut tapisan anda.</p>
           </div>
         `;
         return;
       }
 
       list.forEach(school => {
-        const slotsLeft = Math.max(0, school.maxGroups - school.bookedGroups);
+        const slotsLeft = Math.max(0, (school.maxGroups || 1) - (school.bookedGroups || 0));
         const isFull = slotsLeft <= 0;
         const isOffline = !appState.isSystemOnline;
         const sType = getSchoolType(school);
+        const allowedTrainees = getAllowedTrainees(school);
 
         const card = document.createElement('div');
         card.className = `bg-slate-900 border ${isFull ? 'border-rose-900/50 opacity-80' : 'border-slate-800 hover:border-ipgBlue-500'} rounded-3xl p-5 shadow-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden`;
@@ -1134,7 +1253,7 @@
                   <i class="fa-solid fa-lock text-xs"></i> PENUH (LOCK)
                  </span>` :
                 `<span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-800/80 flex items-center gap-1 shrink-0">
-                  <i class="fa-solid fa-check text-xs"></i> BAKI ${slotsLeft} KUOTA
+                  <i class="fa-solid fa-users text-xs"></i> ${allowedTrainees} GURU PELATIH
                  </span>`
               }
             </div>
@@ -1491,9 +1610,12 @@
 
     window.resetRegistration = function() {
       appState.selectedSchool = null;
+      appState.selectedNegeri = null;
       appState.leaderData = {};
       appState.membersData = [];
+      appState.memberCount = 1;
       document.getElementById('groupForm').reset();
+      buildMemberFormFields();
       goToStep(1);
     };
 
