@@ -898,9 +898,14 @@
 
       if (appState.currentStep === 2) {
         const totalTrainees = 1 + appState.membersData.length;
-        const eligibleText = totalTrainees === 2
-          ? 'Sekolah kapasiti 2 guru pelatih'
-          : 'Sekolah kapasiti 3 atau 4 guru pelatih';
+        let eligibleText = '';
+        if (totalTrainees === 2) {
+          eligibleText = 'Sekolah kapasiti 2 guru pelatih';
+        } else if (totalTrainees === 3) {
+          eligibleText = 'Sekolah kapasiti 3 atau 4 guru pelatih';
+        } else {
+          eligibleText = 'Sekolah kapasiti 4 guru pelatih';
+        }
         document.getElementById('selectedGroupSizeSummary').innerText = `${totalTrainees} Guru Pelatih • Layak: ${eligibleText}`;
       }
 
@@ -965,8 +970,10 @@
 
       if (totalTrainees === 2) {
         note.innerHTML = '<span class="text-ipgBlue-400 font-bold">* Jumlah ahli Kumpulan: 2 Guru Pelatih. </span> Sistem akan memaparkan pilihan sekolah untuk <strong>2 guru pelatih</strong>.';
+      } else if (totalTrainees === 3) {
+        note.innerHTML = '<span class="text-ipgGold-400 font-bold">* Jumlah ahli Kumpulan: 3 Guru Pelatih. </span> Sistem akan memaparkan pilihan sekolah untuk <strong>3 atau 4 guru pelatih</strong>.';
       } else {
-        note.innerHTML = `<span class="text-ipgGold-400 font-bold">* Jumlah ahli Kumpulan: ${totalTrainees} Guru Pelatih. </span> Sistem akan memaparkan pilihan sekolah untuk <strong>3 atau 4 guru pelatih</strong>.`;
+        note.innerHTML = '<span class="text-ipgGold-400 font-bold">* Jumlah ahli Kumpulan: 4 Guru Pelatih. </span> Sistem akan memaparkan pilihan sekolah untuk <strong>4 guru pelatih</strong>.';
       }
 
       // Update Add Ahli button state
@@ -1116,8 +1123,9 @@
     }
 
     // Helper: Check if a school matches the student group's size rules
-    // - If 2 trainees total (1 leader + 1 member): only schools allowing 2 trainees
-    // - If 3 or 4 trainees total (1 leader + 2 or 3 members): schools allowing 3 or 4 trainees
+    // - 2 trainees total (1 leader + 1 member): only schools allowing 2 trainees
+    // - 3 trainees total (1 leader + 2 members): schools allowing 3 or 4 trainees
+    // - 4 trainees total (1 leader + 3 members): only schools allowing 4 trainees
     function matchesGroupTraineeRule(school) {
       const totalTrainees = 1 + appState.membersData.length;
       const allowedTrainees = getAllowedTrainees(school);
@@ -1125,10 +1133,13 @@
       if (totalTrainees === 2) {
         return allowedTrainees === 2;
       }
-      if (totalTrainees >= 3) {
+      if (totalTrainees === 3) {
         return allowedTrainees === 3 || allowedTrainees === 4;
       }
-      return true;
+      if (totalTrainees === 4) {
+        return allowedTrainees === 4;
+      }
+      return false;
     }
 
     function renderSchoolsList() {
@@ -1200,10 +1211,11 @@
       grid.innerHTML = '';
 
       if (list.length === 0) {
+        const capLabel = totalTrainees === 2 ? '2 guru pelatih' : (totalTrainees === 3 ? '3 atau 4 guru pelatih' : '4 guru pelatih');
         grid.innerHTML = `
           <div class="col-span-full py-12 text-center bg-slate-900/60 rounded-3xl border border-slate-800 text-slate-400 space-y-2">
             <i class="fa-solid fa-school-circle-xmark text-3xl text-slate-500"></i>
-            <p class="text-sm font-semibold">Tiada sekolah jenis ${leaderSchoolType || ''} (${totalTrainees === 2 ? '2 guru pelatih' : '3-4 guru pelatih'}) ditemui mengikut tapisan anda.</p>
+            <p class="text-sm font-semibold">Tiada sekolah jenis ${leaderSchoolType || ''} (${capLabel}) ditemui mengikut tapisan anda.</p>
           </div>
         `;
         return;
